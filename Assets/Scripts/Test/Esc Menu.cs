@@ -11,6 +11,8 @@ public class EscMenu : MonoBehaviour
     private bool ismenu = true;
     public AudioSource bgm;
 
+
+
     void Start()
     {
         

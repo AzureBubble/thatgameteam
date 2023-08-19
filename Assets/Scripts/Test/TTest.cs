@@ -3,7 +3,7 @@ using UnityEngine;
 //控制平台
 public class TTest : MonoBehaviour
 {
-    //总时间
+    //倒计时总时间
     private float fullTime = 3600;
 
     //两种平台红色平台蓝色平台
