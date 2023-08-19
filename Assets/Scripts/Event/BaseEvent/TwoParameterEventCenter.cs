@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-
 public class TwoParameterEventCenter<T1, T2> : ScriptableObject
 {
     private event Action<T1, T2> OnEventRaised;

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -6,7 +5,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private VoidEventCenter BeforeSceneUnLoadEventCenter;
     [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
     [SerializeField] private OneParamaterEventCenter<Vector3> MoveToPositionEventCenter;
+    [SerializeField] private TwoParameterEventCenter<float, float> SobarChangeEventCenter;
 
+    [Header("清醒度设置")]
+    [SerializeField] private float maxSobarValue = 100f;
+
+    [SerializeField] private float currentSobarValue;
+    [SerializeField] private float decreaseSobarSpeed = 0.1f;
+    public bool sobar;
 
     private PlayerInput input;
     private Rigidbody2D rb;
@@ -15,12 +21,14 @@ public class PlayerController : MonoBehaviour
     public bool isGround => groundCheck.isGround;
     public bool doubleJump { get; set; } = false;
     public bool isFalling => rb.velocity.y < 0 && isGround;
+    public bool isSobar { get; set; } = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
         groundCheck = GetComponentInChildren<GroundCheck>();
+        currentSobarValue = maxSobarValue;
     }
 
     private void OnEnable()
@@ -37,6 +45,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // TODO:测试用，注意修改
+        if (sobar && currentSobarValue >= 0)
+        {
+            currentSobarValue = Mathf.MoveTowards(currentSobarValue, 0, decreaseSobarSpeed * Time.deltaTime);
+            SobarChangeEventCenter.RaisedEvent(currentSobarValue, maxSobarValue);
+        }
     }
 
     private void OnDisable()
@@ -47,8 +61,6 @@ public class PlayerController : MonoBehaviour
 
         //input.DisableGameplayInput();
     }
-
-   
 
     private void OnBeforeSceneUnLoadEvent()
     {

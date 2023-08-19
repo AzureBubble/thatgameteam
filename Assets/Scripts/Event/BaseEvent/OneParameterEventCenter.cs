@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //[CreateAssetMenu(menuName = ("Event/OneParamaterEventCenter"), fileName = ("OneParamaterEventCenter"))]
@@ -13,7 +11,7 @@ public class OneParamaterEventCenter<T> : ScriptableObject
         OnEventRaised?.Invoke(obj);
     }
 
-    public void AddListener(Action<T>action)
+    public void AddListener(Action<T> action)
     {
         OnEventRaised += action;
     }
