@@ -58,4 +58,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, velocityY);
     }
+
+    public void SetGravity(float value)
+    {
+        rb.gravityScale = value;
+    }
 }

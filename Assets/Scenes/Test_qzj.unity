@@ -603,9 +603,9 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &1822978158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e9a519595cdbd48b47551e44f04b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpInputBufferTime: 0.5
 --- !u!114 &1822978160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +649,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d14283a3cefb0ad44b25993df0237f2c, type: 2}
   - {fileID: 11400000, guid: eb711b59ac279dc418715bfbb9608f22, type: 2}
   - {fileID: 11400000, guid: 7e9055dc43040074aad629b5d4fdedd5, type: 2}
+  - {fileID: 11400000, guid: 78a22127faeedd249bbd8a0371ad2c88, type: 2}
 --- !u!1 &2114986633
 GameObject:
   m_ObjectHideFlags: 0

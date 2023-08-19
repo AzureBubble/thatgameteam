@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcf650d36f2ebf4eb582c420aab6c9e, type: 3}
   m_Name: PlayerState_Run
   m_EditorClassIdentifier: 
-  speed: 5
+  stateName: Run
+  transitionDuration: 0.1
+  moveSpeed: 5
