@@ -12,19 +12,16 @@ public class TTest : MonoBehaviour
     public GameObject[] redPlane;
 
     public GameObject zhen;
-    
+
     private float waitTime;
-    private float setTime ;
+    private float setTime;
 
     private void Update()
     {
-
         Timing();
         DisappearsAndAppears();
         setTime = zhen.GetComponent<秒针>().time;
     }
-
-    
 
     //倒计时
     public void Timing()
@@ -58,7 +55,6 @@ public class TTest : MonoBehaviour
             {
                 redPlane[i].SetActive(false);
             }
-            
         }
         //奇数时间红色平台出现蓝色平台消失
         else
@@ -74,6 +70,4 @@ public class TTest : MonoBehaviour
             }
         }
     }
-
-
 }
