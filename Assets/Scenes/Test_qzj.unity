@@ -539,18 +539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7954584791595178466, guid: 92b20dc2a57e41947af0e8688d4507c3, type: 3}
-      propertyPath: MoveToPositionEventCenter
-      value: 
-      objectReference: {fileID: 11400000, guid: 518cb59e94564e448af0a38fd090e7a7, type: 2}
-    - target: {fileID: 7954584791595178466, guid: 92b20dc2a57e41947af0e8688d4507c3, type: 3}
-      propertyPath: AfterSceneLoadedEventCenter
-      value: 
-      objectReference: {fileID: 11400000, guid: 0fb068318db3da24484e16bc05e10634, type: 2}
-    - target: {fileID: 7954584791595178466, guid: 92b20dc2a57e41947af0e8688d4507c3, type: 3}
-      propertyPath: BeforeSceneUnLoadEventCenter
-      value: 
-      objectReference: {fileID: 11400000, guid: 5a794664e04d257439318a3c2c4c646c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

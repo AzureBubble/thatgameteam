@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcf650d36f2ebf4eb582c420aab6c9e, type: 3}
-  m_Name: PlayerState_Run
+  m_Script: {fileID: 11500000, guid: ece48fd6233c4cf4b8cf18e90f89cabf, type: 3}
+  m_Name: SobarChangeEventCenter
   m_EditorClassIdentifier: 
-  stateName: Run
-  transitionDuration: 0.1
-  moveSpeed: 5
-  SFX: {fileID: 8300000, guid: d75f9248e624a4f4cbed95f9f8fde2f2, type: 3}

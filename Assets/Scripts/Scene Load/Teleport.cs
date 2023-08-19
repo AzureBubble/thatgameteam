@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField]private string targetSceneName;
+    [SerializeField] private string targetSceneName;
     [SerializeField] private Vector3 targetPos;
-    [SerializeField]private TwoParameterEventCenter<string,Vector3> StringVector3EventCenter;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<PlayerController>(out PlayerController player))
+        if (collision.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            StringVector3EventCenter.RaisedEvent(targetSceneName,targetPos);
+            StringVector3EventCenter.RaisedEvent(targetSceneName, targetPos);
         }
     }
 }

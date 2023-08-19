@@ -7,6 +7,7 @@ public class PlayerState_Jump : PlayerState
     [SerializeField] private float moveSpeed = 5f;
 
     [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private AudioClip SFX;
 
     public override void OnEnter()
     {
@@ -14,6 +15,7 @@ public class PlayerState_Jump : PlayerState
         base.OnEnter();
         player.SetVolictyY(jumpForce);
         player.doubleJump = true;
+        player.voicePlayer.PlayOneShot(SFX);
     }
 
     public override void LogicUpdate()
