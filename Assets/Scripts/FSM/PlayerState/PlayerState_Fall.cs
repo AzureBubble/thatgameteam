@@ -17,11 +17,10 @@ public class PlayerState_Fall : PlayerState
             fsm.SwitchState((typeof(PlayerState_Idle)));
         }
 
-        
-            if (input.isJump&&player.doubleJump)
-            {
-                fsm.SwitchState((typeof(PlayerState_DoubleJump)));
-            }
+        if (input.isJump && player.doubleJump)
+        {
+            fsm.SwitchState((typeof(PlayerState_DoubleJump)));
+        }
     }
 
     public override void PhysicsUpdate()

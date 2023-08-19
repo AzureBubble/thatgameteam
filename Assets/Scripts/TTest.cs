@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 //控制平台
 public class TTest : MonoBehaviour
 {
     //总时间
     public float fullTime = 10;
+
     //两种平台红色平台蓝色平台
     public GameObject bluePlane;
+
     public GameObject redPlane;
 
-    void Update()
+    private void Update()
     {
         Timing();
         DisappearsAndAppears();
@@ -24,15 +23,14 @@ public class TTest : MonoBehaviour
     private void Timing()
     {
         if (fullTime <= 0)
-        { 
+        {
             //后续应该会增加个游戏失败弹窗重新开始
-            return; 
-        } 
+            return;
+        }
 
         waitTime += Time.deltaTime;
         if (waitTime >= 3)
         {
-
             fullTime--;
             Debug.Log(fullTime);
             waitTime = 0;
@@ -43,7 +41,7 @@ public class TTest : MonoBehaviour
     public void DisappearsAndAppears()
     {
         //偶数时间蓝色平台出现红色平台消失
-        if (fullTime%2==0)
+        if (fullTime % 2 == 0)
         {
             bluePlane.SetActive(true);
             redPlane.SetActive(false);
@@ -55,10 +53,4 @@ public class TTest : MonoBehaviour
             redPlane.SetActive(true);
         }
     }
-
-
-
-
-
-
 }

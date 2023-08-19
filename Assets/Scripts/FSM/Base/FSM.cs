@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,5 +36,5 @@ public class FSM : MonoBehaviour
         SwitchState(stateDict[newState]);
     }
 
-    #endregion
+    #endregion ÇÐ»»¡¢Æô¶¯×´Ì¬
 }

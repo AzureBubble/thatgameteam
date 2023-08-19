@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -10,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     public float axisX => axis.x;
     public bool isMove => axisX != 0;
     public bool isJump => inputActions.Gameplay.Jump.WasPressedThisFrame();
-    public bool stopJump =>inputActions.Gameplay.Jump.WasReleasedThisFrame();
+    public bool stopJump => inputActions.Gameplay.Jump.WasReleasedThisFrame();
 
     private void Awake()
     {

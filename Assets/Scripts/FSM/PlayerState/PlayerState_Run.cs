@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = ("Data/PlayerState/Run"), fileName = ("PlayerState_Run"))]
 public class PlayerState_Run : PlayerState
 {
-    [SerializeField]private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
     public override void OnEnter()
     {
@@ -14,7 +12,7 @@ public class PlayerState_Run : PlayerState
 
     public override void LogicUpdate()
     {
-        if(!input.isMove)
+        if (!input.isMove)
         {
             fsm.SwitchState(typeof(PlayerState_Idle));
         }

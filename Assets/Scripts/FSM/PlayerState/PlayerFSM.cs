@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFSM : FSM
 {
-    [SerializeField] PlayerState[] states;
+    [SerializeField] private PlayerState[] states;
     private Animator animator;
     private PlayerController player;
     private PlayerInput input;
@@ -18,7 +17,7 @@ public class PlayerFSM : FSM
 
         foreach (PlayerState state in states)
         {
-            state.Init(player,input,animator,this);
+            state.Init(player, input, animator, this);
             stateDict.Add(state.GetType(), state);
         }
     }

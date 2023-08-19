@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGround => groundCheck.isGround;
     public bool doubleJump { get; set; } = false;
-    public bool isFalling =>rb.velocity.y < 0&&isGround;
+    public bool isFalling => rb.velocity.y < 0 && isGround;
 
     private void Awake()
     {

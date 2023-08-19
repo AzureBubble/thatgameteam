@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = ("Data/PlayerState/Jump"), fileName = ("PlayerState_Jump"))]
@@ -17,7 +15,7 @@ public class PlayerState_Jump : PlayerState
 
     public override void LogicUpdate()
     {
-        if(input.stopJump)
+        if (input.stopJump)
         {
             fsm.SwitchState(typeof(PlayerState_Fall));
         }
