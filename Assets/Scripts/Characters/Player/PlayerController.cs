@@ -1,7 +1,13 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private VoidEventCenter BeforeSceneUnLoadEventCenter;
+    [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
+    [SerializeField] private OneParamaterEventCenter<Vector3> MoveToPositionEventCenter;
+
+
     private PlayerInput input;
     private Rigidbody2D rb;
     private GroundCheck groundCheck;
@@ -19,11 +25,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        BeforeSceneUnLoadEventCenter.AddListener(OnBeforeSceneUnLoadEvent);
+        AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
+        MoveToPositionEventCenter.AddListener(OnMoveToPositionEvent);
     }
 
     private void Start()
     {
-        input.EnableGameplayInput();
+        //input.EnableGameplayInput();
     }
 
     private void Update()
@@ -32,7 +41,32 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        BeforeSceneUnLoadEventCenter.RemoveListener(OnBeforeSceneUnLoadEvent);
+        AfterSceneLoadedEventCenter.RemoveListener(OnAfterSceneLoadedEvent);
+        MoveToPositionEventCenter.RemoveListener(OnMoveToPositionEvent);
+
+        //input.DisableGameplayInput();
+    }
+
+   
+
+    private void OnBeforeSceneUnLoadEvent()
+    {
+        print("场景卸载之前");
+
         input.DisableGameplayInput();
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        print("场景加载完成");
+
+        input.EnableGameplayInput();
+    }
+
+    private void OnMoveToPositionEvent(Vector3 targetPos)
+    {
+        transform.position = targetPos;
     }
 
     public void Move(float speed)
