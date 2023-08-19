@@ -16,7 +16,7 @@ public class PlayerState_Idle : PlayerState
             fsm.SwitchState(typeof(PlayerState_Run));
         }
 
-        if (input.isJump)
+        if (input.isJump || input.hasJumpInputBuffer)
         {
             fsm.SwitchState(typeof(PlayerState_Jump));
         }

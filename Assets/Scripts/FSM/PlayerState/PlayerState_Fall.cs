@@ -17,9 +17,15 @@ public class PlayerState_Fall : PlayerState
             fsm.SwitchState((typeof(PlayerState_Idle)));
         }
 
-        if (input.isJump && player.doubleJump)
+        if (input.isJump)
         {
-            fsm.SwitchState((typeof(PlayerState_DoubleJump)));
+            if (player.doubleJump)
+            {
+                fsm.SwitchState((typeof(PlayerState_DoubleJump)));
+                return;
+            }
+
+            input.SetJumpInputBufferTime();
         }
     }
 
