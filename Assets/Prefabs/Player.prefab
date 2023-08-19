@@ -241,8 +241,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af94b5eacd22800438a0ad4d8f2244e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeforeSceneUnLoadEventCenter: {fileID: 0}
-  AfterSceneLoadedEventCenter: {fileID: 0}
+  BeforeSceneUnLoadEventCenter: {fileID: 11400000, guid: 5a794664e04d257439318a3c2c4c646c, type: 2}
+  AfterSceneLoadedEventCenter: {fileID: 11400000, guid: 0fb068318db3da24484e16bc05e10634, type: 2}
+  MoveToPositionEventCenter: {fileID: 11400000, guid: 518cb59e94564e448af0a38fd090e7a7, type: 2}
+  SobarChangeEventCenter: {fileID: 11400000, guid: 4dd92ba25f396624aa2b00cf11fd5180, type: 2}
+  maxSobarValue: 100
+  currentSobarValue: 0
+  decreaseSobarSpeed: 1
+  sobar: 0
 --- !u!114 &2500426944710950829
 MonoBehaviour:
   m_ObjectHideFlags: 0

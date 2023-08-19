@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1373773572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +526,9 @@ MonoBehaviour:
   AfterSceneLoadedEventCenter: {fileID: 11400000, guid: 0fb068318db3da24484e16bc05e10634, type: 2}
   NewGameEventCenter: {fileID: 11400000, guid: 2cc6ea00828179f4cbb31efb36faeca1, type: 2}
   QuitGameEventCenter: {fileID: 11400000, guid: 528e37496c5698a4b95b65424819dc7e, type: 2}
+  InitiazationEventCenter: {fileID: 11400000, guid: 8843426cda9a12c428880d06dc1c6f47, type: 2}
   fadeDuration: 1.5
+  sobarBar: {fileID: 2087629728}
   startSceneName: Menu
   firstSceneName: Test_qzj
   firstPos: {x: 0, y: 3, z: 0}
@@ -939,7 +941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2087629729
 RectTransform:
   m_ObjectHideFlags: 0

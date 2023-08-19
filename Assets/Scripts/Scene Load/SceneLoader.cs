@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,8 +12,10 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
     [SerializeField] private VoidEventCenter NewGameEventCenter;
     [SerializeField] private VoidEventCenter QuitGameEventCenter;
+    [SerializeField] private VoidEventCenter InitiazationEventCenter;
 
     [SerializeField] private float fadeDuration = 1.5f;
+    [SerializeField] private GameObject sobarBar;
 
     private CanvasGroup fadeCanvasGroup;
 
@@ -28,23 +31,50 @@ public class SceneLoader : MonoBehaviour
 
     private void OnEnable()
     {
+        BeforeSceneUnLoadEventCenter.AddListener(OnBeforeSceneUnLoadEvent);
+        AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
         StringVector3EventCenter.AddListener(OnTransitionEvent);
         NewGameEventCenter.AddListener(NewGame);
         QuitGameEventCenter.AddListener(QuitGame);
+        //InitiazationEventCenter.AddListener(OnInitiazationEvent);
     }
 
     private IEnumerator Start()
     {
         yield return LoadSceneSetActive(startSceneName);
+
         if (startSceneName != "Menu")
             AfterSceneLoadedEventCenter.RaiseEvent();
     }
 
     private void OnDisable()
     {
+        BeforeSceneUnLoadEventCenter.RemoveListener(OnBeforeSceneUnLoadEvent);
+        AfterSceneLoadedEventCenter.RemoveListener(OnAfterSceneLoadedEvent);
+
         StringVector3EventCenter.RemoveListener(OnTransitionEvent);
         NewGameEventCenter.RemoveListener(NewGame);
         QuitGameEventCenter.RemoveListener(QuitGame);
+        //InitiazationEventCenter.RemoveListener(OnInitiazationEvent);
+    }
+
+    private void OnBeforeSceneUnLoadEvent()
+    {
+        SetSobarInVisiable();
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        SetSobarVisiable();
+    }
+
+    private void SetSobarInVisiable()
+    {
+        sobarBar.SetActive(false);
+    }
+    private void SetSobarVisiable()
+    {
+        sobarBar.SetActive(true);
     }
 
     private void OnTransitionEvent(string sceneName, Vector3 targetPos)
