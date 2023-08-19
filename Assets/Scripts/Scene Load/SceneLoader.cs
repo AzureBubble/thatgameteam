@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -72,6 +71,7 @@ public class SceneLoader : MonoBehaviour
     {
         sobarBar.SetActive(false);
     }
+
     private void SetSobarVisiable()
     {
         sobarBar.SetActive(true);
