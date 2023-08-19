@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,13 +9,12 @@ public class EscMenu : MonoBehaviour
     private bool ismenu = true;
     public AudioSource bgm;
 
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (ismenu)
         {
@@ -28,7 +25,7 @@ public class EscMenu : MonoBehaviour
                 Time.timeScale = 0;
                 bgm.Pause();
             }
-        } 
+        }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             menu.SetActive(false);
@@ -36,7 +33,6 @@ public class EscMenu : MonoBehaviour
             Time.timeScale = 1;
             bgm.Play();
         }
-        
     }
 
     public void ContinueGame()//¼ÌÐøÓÎÏ·
@@ -57,6 +53,4 @@ public class EscMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
-
 }

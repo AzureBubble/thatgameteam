@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool doubleJump { get; set; } = false;
     public bool isFalling => rb.velocity.y < 0 && isGround;
     public bool isSobar { get; set; } = false;
+    public bool isInvincible { get; set; } = false;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //input.EnableGameplayInput();
+        input.EnableGameplayInput();
     }
 
     private void Update()
