@@ -16,3 +16,4 @@ MonoBehaviour:
   transitionDuration: 0.1
   moveSpeed: 5
   jumpForce: 8
+  SFX: {fileID: 8300000, guid: bc22e1144ef463f4e9eb67655308927f, type: 3}

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GroundCheck groundCheck;
 
+    public AudioSource voicePlayer { get; private set; }
     public bool isGround => groundCheck.isGround;
     public bool doubleJump { get; set; } = false;
     public bool isFalling => rb.velocity.y < 0 && isGround;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
         groundCheck = GetComponentInChildren<GroundCheck>();
+        voicePlayer = GetComponent<AudioSource>();
         currentSobarValue = maxSobarValue;
     }
 
