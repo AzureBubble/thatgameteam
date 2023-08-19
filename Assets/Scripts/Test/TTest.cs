@@ -4,7 +4,7 @@ using UnityEngine;
 public class TTest : MonoBehaviour
 {
     //总时间
-    public float fullTime = 60;
+    private float fullTime = 3600;
 
     //两种平台红色平台蓝色平台
     public GameObject[] bluePlane;
@@ -21,7 +21,7 @@ public class TTest : MonoBehaviour
 
         Timing();
         DisappearsAndAppears();
-        setTime = zhen.GetComponent<秒针>().time/2;
+        setTime = zhen.GetComponent<秒针>().time;
     }
 
     
@@ -31,7 +31,6 @@ public class TTest : MonoBehaviour
     {
         if (fullTime <= 0)
         {
-            //后续应该会增加个游戏失败弹窗重新开始
             return;
         }
 
@@ -73,7 +72,6 @@ public class TTest : MonoBehaviour
             {
                 redPlane[i].SetActive(true);
             }
-
         }
     }
 

@@ -13,7 +13,8 @@ public class 秒针 : MonoBehaviour
     private void Start()
     {
         
-        angle = 360 / time;
+        angle = 180 / time;
+
     }
 
     // Update is called once per frame
