@@ -19,7 +19,7 @@ public class Objdes : MonoBehaviour
     {
         if (collision.tag == "prop")
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject,0.3f);
             Destroy(this.gameObject);
         }
     }
