@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
     {
         if (collision.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            if (state == 0)
+            if (state == 0&& player.canAttack!=true)
             {
                 player.canAttack = true;
                 this.gameObject.SetActive(false);
