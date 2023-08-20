@@ -27,7 +27,7 @@ public class Box : MonoBehaviour
             Time.timeScale = 0;
             text.text = str;
             story.SetActive(true);
-            Destroy(this.gameObject);
+            
         }
     }
 }

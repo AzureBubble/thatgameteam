@@ -16,7 +16,7 @@ public class Story : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Time.timeScale = 1;
-            this.gameObject.SetActive(false);          
+            this.gameObject.transform.parent.gameObject.SetActive(false);          
         }
     }
 }
