@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource voicePlayer { get; private set; }
     public bool isGround => groundCheck.isGround;
     public bool doubleJump { get; set; } = false;
-    public bool isFalling => rb.velocity.y < 0 && isGround;
+    public bool isFalling => rb.velocity.y < 0 && !isGround;
     public bool isSobar { get; set; } = false;
     public bool isInvincible { get; set; } = false;
     public bool canAttack { get; set; } = false;
