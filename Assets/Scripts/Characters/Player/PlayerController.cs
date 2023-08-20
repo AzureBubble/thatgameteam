@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("«Â–—∂»…Ë÷√")]
     [SerializeField] private float maxSobarValue = 100f;
 
-    [SerializeField] private float currentSobarValue;
+    [SerializeField] public float currentSobarValue;
     [SerializeField] private float decreaseSobarSpeed = 0.1f;
     public bool sobar;
 
