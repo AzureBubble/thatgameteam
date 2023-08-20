@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Win : MonoBehaviour
 {
     // Start is called before the first frame update
     //设置一个开关
-    bool key;
+    private bool key;
 
     public GameObject player;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,14 +17,12 @@ public class Win : MonoBehaviour
         }
     }
 
-
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (key)
         {
@@ -39,7 +34,10 @@ public class Win : MonoBehaviour
     {
         //打包用这个
         //Application.Quit();
-
-        UnityEditor.EditorApplication.isPlaying = false; 
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
