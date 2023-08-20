@@ -159,7 +159,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_AttackTime: 0
-      m_SustainTime: 0.5
+      m_SustainTime: 1
       m_DecayTime: 0.7
       m_ScaleWithImpact: 1
       m_HoldForever: 0
@@ -189,9 +189,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraBlackEventCenter: {fileID: 11400000, guid: 9838d01950f43b7428c7ed4aff0fe951, type: 2}
+  AfterSceneLoadedEventCenter: {fileID: 11400000, guid: 0fb068318db3da24484e16bc05e10634, type: 2}
+  PlayerDeadEventCenter: {fileID: 11400000, guid: 804a2cd3a29b02144aa8aa4f7e884afe, type: 2}
+  StringVector3EventCenter: {fileID: 11400000, guid: b895734b1150d824fa1e34283c222397, type: 2}
   impulseSource: {fileID: 8081822878301114154}
   timer: 8.6
   currentTime: 0
+  isStop: 0
+  shakeSFX: {fileID: 8300000, guid: 5d486db5c837f5c4d8f9a64628de0157, type: 3}
 --- !u!1 &8515446352260999672
 GameObject:
   m_ObjectHideFlags: 0

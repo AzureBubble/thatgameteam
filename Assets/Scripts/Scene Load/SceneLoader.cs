@@ -28,6 +28,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Vector3 firstPos;
     private Vector3 currentPos;
     private bool isFade;
+    public AudioClip bgm;
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator Start()
     {
         yield return LoadSceneSetActive(startSceneName,null);
-
+        SoundManager.audioSource.PlayOneShot(bgm);
         if (startSceneName != "Menu")
             AfterSceneLoadedEventCenter.RaiseEvent();
     }
@@ -82,6 +83,7 @@ public class SceneLoader : MonoBehaviour
     private void OnBeforeSceneUnLoadEvent()
     {
         SetSobarInVisiable();
+        SoundManager.audioSource.Stop();
     }
 
     private void OnAfterSceneLoadedEvent()

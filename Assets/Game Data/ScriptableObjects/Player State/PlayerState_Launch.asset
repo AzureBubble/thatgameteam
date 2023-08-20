@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Launch
   transitionDuration: 0.1
+  launchSFX: {fileID: 8300000, guid: c0a1ca0f7031d854195236c05a59de7b, type: 3}

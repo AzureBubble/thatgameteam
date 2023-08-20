@@ -187,7 +187,9 @@ MonoBehaviour:
   successPanel: {fileID: 788371670}
   DefeatPanel: {fileID: 1524138502}
   blackPanel: {fileID: 284859170}
-  blackDuration: 1
+  blackDuration: 0.5
+  victorySource: {fileID: 8300000, guid: 88a88862a0c1ccc42b871388f782fd8c, type: 3}
+  defeatSource: {fileID: 8300000, guid: 6e9322cffbf06504089ce9b5538ec5d4, type: 3}
 --- !u!1 &284859170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1338,7 @@ MonoBehaviour:
   startSceneName: Menu
   firstSceneName: Test001
   firstPos: {x: 0.58, y: -9.289, z: 0}
+  bgm: {fileID: 8300000, guid: b778494ad7d60e446ae0e6dd739eedc8, type: 3}
 --- !u!4 &1373773573
 Transform:
   m_ObjectHideFlags: 0

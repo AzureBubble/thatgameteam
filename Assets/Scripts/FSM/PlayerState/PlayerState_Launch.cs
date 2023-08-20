@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = ("Data/PlayerState/Launch"), fileName = ("PlayerState_Launch"))]
 public class PlayerState_Launch : PlayerState
 {
+    public AudioClip launchSFX;
     public override void OnEnter()
     {
         base.OnEnter();
@@ -13,6 +14,7 @@ public class PlayerState_Launch : PlayerState
     {
         if (isAnimationFinished)
         {
+            player.voicePlayer.PlayOneShot(launchSFX);
             player.launch.LaunchObj(-player.gameObject.transform.localScale.x);
 
             if (input.isMove)
