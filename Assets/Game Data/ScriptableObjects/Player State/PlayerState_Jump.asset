@@ -15,5 +15,5 @@ MonoBehaviour:
   stateName: Jump
   transitionDuration: 0.1
   moveSpeed: 1.5
-  jumpForce: 5
+  jumpForce: 5.1
   SFX: {fileID: 8300000, guid: d11cfd401327ce34e80c9abea7a6593c, type: 3}
