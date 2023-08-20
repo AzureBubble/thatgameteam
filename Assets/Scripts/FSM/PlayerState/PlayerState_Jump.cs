@@ -20,7 +20,8 @@ public class PlayerState_Jump : PlayerState
 
     public override void LogicUpdate()
     {
-        if (input.stopJump || player.isFalling)
+        //input.stopJump ||
+        if (player.isFalling)
         {
             fsm.SwitchState(typeof(PlayerState_Fall));
         }
