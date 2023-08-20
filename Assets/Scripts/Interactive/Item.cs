@@ -4,6 +4,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public int state;
     [SerializeField] private float throwForce;
     [SerializeField] private float awakeTime = 1.0f;
 
@@ -14,6 +15,8 @@ public class Item : MonoBehaviour
 
     public void Init(Vector2 dir)
     {
+        state = 1;
+        rb.gravityScale = 1;
         rb.AddForce(dir * throwForce, ForceMode2D.Impulse);
         StartCoroutine(DestoryObj());
     }
@@ -22,14 +25,17 @@ public class Item : MonoBehaviour
     {
         if (collision.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            player.canAttack = true;
-            gameObject.SetActive(false);
+            if (state == 0)
+            {
+                player.canAttack = true;
+                this.gameObject.SetActive(false);
+            }        
         }
     }
 
     IEnumerator DestoryObj()
     {
         yield return new WaitForSeconds(awakeTime);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
