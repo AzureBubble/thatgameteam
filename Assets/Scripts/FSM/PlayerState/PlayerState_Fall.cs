@@ -27,6 +27,11 @@ public class PlayerState_Fall : PlayerState
 
             input.SetJumpInputBufferTime();
         }
+
+        if (input.isAttack && player.canAttack)
+        {
+            fsm.SwitchState(typeof(PlayerState_Launch));
+        }
     }
 
     public override void PhysicsUpdate()

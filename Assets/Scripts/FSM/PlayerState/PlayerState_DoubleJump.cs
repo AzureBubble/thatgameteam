@@ -19,6 +19,10 @@ public class PlayerState_DoubleJump : PlayerState
         {
             fsm.SwitchState((typeof(PlayerState_Fall)));
         }
+        if (input.isAttack && player.canAttack)
+        {
+            fsm.SwitchState(typeof(PlayerState_Launch));
+        }
     }
 
     public override void PhysicsUpdate()
