@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: DoubleJump
   transitionDuration: 0.1
-  moveSpeed: 3
+  moveSpeed: 1.5
   jumpForce: 5
