@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: CoyoteTime
   transitionDuration: 0.1
-  moveSpeed: 5
+  moveSpeed: 3
   coyoteTime: 0.1

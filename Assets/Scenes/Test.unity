@@ -555,7 +555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1676654359
 AudioListener:
   m_ObjectHideFlags: 0
@@ -686,6 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8f4194bfc06734c835a029f433c8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullTime: 10
-  bluePlane: {fileID: 1146678156}
-  redPlane: {fileID: 1217094388}
+  bluePlane:
+  - {fileID: 0}
+  redPlane:
+  - {fileID: 0}
+  zhen: {fileID: 0}
