@@ -1081,6 +1081,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop
       objectReference: {fileID: 0}
+    - target: {fileID: 4735077959994933318, guid: 4418805b77ceb76459c107626f39b7da, type: 3}
+      propertyPath: awakeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735077959994933318, guid: 4418805b77ceb76459c107626f39b7da, type: 3}
+      propertyPath: throwForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7126629213547103883, guid: 4418805b77ceb76459c107626f39b7da, type: 3}
       propertyPath: m_RootOrder
       value: 6

@@ -15,4 +15,4 @@ MonoBehaviour:
   stateName: CoyoteTime
   transitionDuration: 0.1
   moveSpeed: 2
-  coyoteTime: 0.1
+  coyoteTime: 0.2
