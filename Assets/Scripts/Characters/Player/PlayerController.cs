@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private VoidEventCenter BeforeSceneUnLoadEventCenter;
     [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
+    [SerializeField] private VoidEventCenter PlayerDeadEventCenter;
+    [SerializeField] private VoidEventCenter VictoryEventCenter;
     [SerializeField] private OneParamaterEventCenter<Vector3> MoveToPositionEventCenter;
     [SerializeField] private TwoParameterEventCenter<float, float> SobarChangeEventCenter;
 
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool isSobar { get; set; } = false;
     public bool isInvincible { get; set; } = false;
     public bool canAttack { get; set; } = false;
+    public bool isDead { get; set; } = false;
 
     private void Awake()
     {
@@ -41,6 +45,7 @@ public class PlayerController : MonoBehaviour
         BeforeSceneUnLoadEventCenter.AddListener(OnBeforeSceneUnLoadEvent);
         AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
         MoveToPositionEventCenter.AddListener(OnMoveToPositionEvent);
+        VictoryEventCenter.AddListener(OnVictoryEvent);
     }
 
     private void Start()
@@ -56,6 +61,12 @@ public class PlayerController : MonoBehaviour
             currentSobarValue = Mathf.MoveTowards(currentSobarValue, 0, decreaseSobarSpeed * Time.deltaTime);
             SobarChangeEventCenter.RaisedEvent(currentSobarValue, maxSobarValue);
         }
+        if (currentSobarValue <= 0)
+        {
+            isDead = true;
+            PlayerDeadEventCenter.RaiseEvent();
+            input.DisableGameplayInput();
+        }
     }
 
     private void OnDisable()
@@ -63,20 +74,27 @@ public class PlayerController : MonoBehaviour
         BeforeSceneUnLoadEventCenter.RemoveListener(OnBeforeSceneUnLoadEvent);
         AfterSceneLoadedEventCenter.RemoveListener(OnAfterSceneLoadedEvent);
         MoveToPositionEventCenter.RemoveListener(OnMoveToPositionEvent);
+        VictoryEventCenter.RemoveListener(OnVictoryEvent);
 
         //input.DisableGameplayInput();
     }
 
+    private void OnVictoryEvent()
+    {
+        input.DisableGameplayInput();
+
+    }
+
     private void OnBeforeSceneUnLoadEvent()
     {
-        print("场景卸载之前");
+        //print("场景卸载之前");
 
         input.DisableGameplayInput();
     }
 
     private void OnAfterSceneLoadedEvent()
     {
-        print("场景加载完成");
+        //print("场景加载完成");
 
         input.EnableGameplayInput();
     }
@@ -90,7 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         if (input.isMove)
         {
-            transform.localScale = new Vector3(-input.axisX, 1, 1);
+            transform.localScale = new Vector3(-Mathf.Sign(input.axisX), 1, 1);
         }
         SetVolictyX(speed * input.axisX);
     }
