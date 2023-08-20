@@ -4,20 +4,40 @@ public class Teleport : MonoBehaviour
 {
     [SerializeField] private string targetSceneName;
     [SerializeField] private Vector3 targetPos;
-    [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
-    [SerializeField] private VoidEventCenter VictoryEventCenter;
-    //[SerializeField] private GameObject successPanel;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> SceneNamePosEventCenter;
 
-    public void Transition()
+    [SerializeField] private VoidEventCenter VictoryEventCenter;
+
+    //[SerializeField] private VoidEventCenter MoveToTest002EventCenter;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToNextSceneEventCenter;
+
+    //[SerializeField] private GameObject successPanel;
+    private void OnEnable()
     {
-        StringVector3EventCenter.RaisedEvent(targetSceneName, targetPos);
+        SceneNamePosEventCenter.AddListener(OnStringVector3Event);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnDisable()
     {
-        if(collision.TryGetComponent<PlayerController>(out PlayerController player))
-        {
-            VictoryEventCenter.RaiseEvent();
-        }
+        SceneNamePosEventCenter.RemoveListener(OnStringVector3Event);
+    }
+
+    public void OnStringVector3Event(string targetSceneName, Vector3 targetPos)
+    {
+        this.targetSceneName = targetSceneName;
+        this.targetPos = targetPos;
+        print(targetSceneName + targetPos);
+    }
+
+    public void OnClick()
+    {
+        //if(collision.TryGetComponent<PlayerController>(out PlayerController player))
+        //{
+        //  VictoryEventCenter.RaiseEvent();
+        //}
+
+        //VictoryEventCenter.RaiseEvent();
+
+        MoveToNextSceneEventCenter.RaisedEvent(targetSceneName, targetPos);
     }
 }

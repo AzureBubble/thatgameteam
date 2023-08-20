@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private VoidEventCenter VictoryEventCenter;
     [SerializeField] private OneParamaterEventCenter<Vector3> MoveToPositionEventCenter;
     [SerializeField] private TwoParameterEventCenter<float, float> SobarChangeEventCenter;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
+
 
     [Header("清醒度设置")]
     [SerializeField] private float maxSobarValue = 100f;
 
-    [SerializeField] private float currentSobarValue;
+    [SerializeField] public float currentSobarValue;
     [SerializeField] private float decreaseSobarSpeed = 0.1f;
     public bool sobar;
 
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
         AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
         MoveToPositionEventCenter.AddListener(OnMoveToPositionEvent);
         VictoryEventCenter.AddListener(OnVictoryEvent);
+        StringVector3EventCenter.AddListener(OnStringVector3Event);
     }
 
     private void Start()
@@ -75,14 +78,24 @@ public class PlayerController : MonoBehaviour
         AfterSceneLoadedEventCenter.RemoveListener(OnAfterSceneLoadedEvent);
         MoveToPositionEventCenter.RemoveListener(OnMoveToPositionEvent);
         VictoryEventCenter.RemoveListener(OnVictoryEvent);
+        StringVector3EventCenter.AddListener(OnStringVector3Event);
+
 
         //input.DisableGameplayInput();
     }
 
+    
+
     private void OnVictoryEvent()
     {
         input.DisableGameplayInput();
+        sobar = false;
+    }
 
+    private void OnStringVector3Event(string arg1, Vector3 vector)
+    {
+        input.DisableGameplayInput();
+        sobar = false;
     }
 
     private void OnBeforeSceneUnLoadEvent()
@@ -97,6 +110,7 @@ public class PlayerController : MonoBehaviour
         //print("场景加载完成");
 
         input.EnableGameplayInput();
+        sobar = true;
     }
 
     private void OnMoveToPositionEvent(Vector3 targetPos)

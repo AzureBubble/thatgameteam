@@ -11,7 +11,8 @@ public class SobarBar : MonoBehaviour
     [SerializeField] private VoidEventCenter BeforeSceneUnLoadEvent;
     [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
     [SerializeField] private VoidEventCenter GoBackToMenuEventCenter;
-
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> SceneNamePosEventCenter;
 
     public Image sobarImage;
     public GameObject successPanel;
@@ -25,6 +26,7 @@ public class SobarBar : MonoBehaviour
         RestartGameEventCenter.AddListener(OnRestartGameEvent);
         BeforeSceneUnLoadEvent.AddListener(OnBeforeSceneUnLoadEvent);
         GoBackToMenuEventCenter.AddListener(OnGoBackToMenuEvent);
+        StringVector3EventCenter.AddListener(OnStringVector3Event);
     }
 
     private void OnDisable()
@@ -35,7 +37,17 @@ public class SobarBar : MonoBehaviour
         RestartGameEventCenter.RemoveListener(OnRestartGameEvent);
         BeforeSceneUnLoadEvent.RemoveListener(OnBeforeSceneUnLoadEvent);
         GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
+        StringVector3EventCenter.RemoveListener(OnStringVector3Event);
 
+    }
+
+    
+
+    private void OnStringVector3Event(string sceneName, Vector3 targetPos)
+    {
+        successPanel.SetActive(true);
+        DefeatPanel.SetActive(false);
+        SceneNamePosEventCenter.RaisedEvent(sceneName, targetPos);
     }
 
     private void OnGoBackToMenuEvent()

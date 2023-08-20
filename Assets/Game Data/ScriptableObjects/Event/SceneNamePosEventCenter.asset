@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5d8212ba2cdbe40aabca26ba022503, type: 3}
-  m_Name: PlayerState_DoubleJump
+  m_Script: {fileID: 11500000, guid: fb52b1b3e135b3f45acffd98dceb6791, type: 3}
+  m_Name: SceneNamePosEventCenter
   m_EditorClassIdentifier: 
-  stateName: DoubleJump
-  transitionDuration: 0.1
-  moveSpeed: 1.5
-  jumpForce: 5.1

@@ -189,7 +189,7 @@ Transform:
   - {fileID: 3589868016414201198}
   - {fileID: 4454110639795052787}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2033966380537343072
 Rigidbody2D:
@@ -345,10 +345,11 @@ MonoBehaviour:
   VictoryEventCenter: {fileID: 11400000, guid: e610dc3988d09064d98a99ab8e81fcca, type: 2}
   MoveToPositionEventCenter: {fileID: 11400000, guid: 518cb59e94564e448af0a38fd090e7a7, type: 2}
   SobarChangeEventCenter: {fileID: 11400000, guid: 4dd92ba25f396624aa2b00cf11fd5180, type: 2}
+  StringVector3EventCenter: {fileID: 11400000, guid: b895734b1150d824fa1e34283c222397, type: 2}
   maxSobarValue: 100
   currentSobarValue: 0
   decreaseSobarSpeed: 1
-  sobar: 0
+  sobar: 1
 --- !u!114 &2500426944710950829
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -180,6 +180,8 @@ MonoBehaviour:
   BeforeSceneUnLoadEvent: {fileID: 11400000, guid: 5a794664e04d257439318a3c2c4c646c, type: 2}
   AfterSceneLoadedEventCenter: {fileID: 11400000, guid: 0fb068318db3da24484e16bc05e10634, type: 2}
   GoBackToMenuEventCenter: {fileID: 11400000, guid: 089f45e8e023569438ec1a79288c23e0, type: 2}
+  StringVector3EventCenter: {fileID: 11400000, guid: b895734b1150d824fa1e34283c222397, type: 2}
+  SceneNamePosEventCenter: {fileID: 11400000, guid: 938aedd19135c1e46ba788a8eec269a0, type: 2}
   sobarImage: {fileID: 1728212445}
   successPanel: {fileID: 788371670}
   DefeatPanel: {fileID: 1524138502}
@@ -1248,11 +1250,12 @@ MonoBehaviour:
   QuitGameEventCenter: {fileID: 11400000, guid: 528e37496c5698a4b95b65424819dc7e, type: 2}
   RestartGameEventCenter: {fileID: 11400000, guid: 5014eea1ff500154c8ab779163d8952f, type: 2}
   GoBackToMenuEventCenter: {fileID: 11400000, guid: 089f45e8e023569438ec1a79288c23e0, type: 2}
+  MoveToNextSceneEventCenter: {fileID: 11400000, guid: 8af179960c95dd04da78872939812f43, type: 2}
   fadeDuration: 1.5
   sobarBar: {fileID: 2087629728}
   startSceneName: Menu
-  firstSceneName: Test_qzj
-  firstPos: {x: 0, y: 3, z: 0}
+  firstSceneName: Test001
+  firstPos: {x: 0.58, y: -9.289, z: 0}
 --- !u!4 &1373773573
 Transform:
   m_ObjectHideFlags: 0
@@ -1985,7 +1988,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2023962099}
         m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
-        m_MethodName: Transition
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2045,10 +2048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d97992a65745c44aa8dab6c9a1bd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Test
-  targetPos: {x: 0, y: 2, z: 0}
-  StringVector3EventCenter: {fileID: 11400000, guid: b895734b1150d824fa1e34283c222397, type: 2}
-  VictoryEventCenter: {fileID: 0}
+  targetSceneName: 
+  targetPos: {x: 0, y: 0, z: 0}
+  SceneNamePosEventCenter: {fileID: 11400000, guid: 938aedd19135c1e46ba788a8eec269a0, type: 2}
+  VictoryEventCenter: {fileID: 11400000, guid: e610dc3988d09064d98a99ab8e81fcca, type: 2}
+  MoveToNextSceneEventCenter: {fileID: 11400000, guid: 8af179960c95dd04da78872939812f43, type: 2}
 --- !u!95 &2023962100
 Animator:
   serializedVersion: 5
