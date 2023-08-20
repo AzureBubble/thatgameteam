@@ -22,6 +22,9 @@ public class SobarBar : MonoBehaviour
     public GameObject DefeatPanel;
     public GameObject blackPanel;
     public float blackDuration = 1.0f;
+    public AudioClip victorySource;
+    public AudioClip defeatSource;
+
 
     private void OnEnable()
     {
@@ -64,6 +67,7 @@ public class SobarBar : MonoBehaviour
 
     private void OnStringVector3Event(string sceneName, Vector3 targetPos)
     {
+        SoundManager.audioSource.PlayOneShot(victorySource);
         successPanel.SetActive(true);
         DefeatPanel.SetActive(false);
         SceneNamePosEventCenter.RaisedEvent(sceneName, targetPos);
@@ -76,6 +80,8 @@ public class SobarBar : MonoBehaviour
 
     private void OnBeforeSceneUnLoadEvent()
     {
+        SoundManager.audioSource.Stop();
+
         successPanel.SetActive(false);
         DefeatPanel.SetActive(false);
     }
@@ -94,6 +100,7 @@ public class SobarBar : MonoBehaviour
 
     private void OnPlayerDeadEvent()
     {
+        SoundManager.audioSource.PlayOneShot(defeatSource);
         DefeatPanel.SetActive(true);
         successPanel.SetActive(false);
     }
