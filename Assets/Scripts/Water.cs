@@ -21,6 +21,7 @@ public class Water : MonoBehaviour
         if (collision.gameObject == player)
         {
             collision.gameObject.GetComponent<PlayerController>().currentSobarValue += 10;
+            Destroy(this.gameObject);
         }
     }
 }

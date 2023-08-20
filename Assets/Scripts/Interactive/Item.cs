@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     public Vector2 pdir;
     GameObject player;
     [SerializeField] private float throwForce;
-    [SerializeField] private float awakeTime = 1.0f;
+    [SerializeField] private float awakeTime = 0.8f;
 
     private void Awake()
     {
