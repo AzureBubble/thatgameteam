@@ -7,6 +7,12 @@ public class 秒针 : MonoBehaviour
     public float time = 1;
     private float angle;
 
+    bool isStop;
+    private void OnPlayerDeadEvent()
+    {
+        isStop = true;
+    }
+
     private void Start()
     {
         angle = 180 / time;
@@ -15,6 +21,17 @@ public class 秒针 : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        transform.Rotate(Vector3.back, Time.deltaTime *angle, Space.World);
+        if (isStop == false)
+        {
+            transform.Rotate(Vector3.back, Time.deltaTime * angle, Space.World);
+        }
+        
+
     }
+
+
+
+
+
+
 }
