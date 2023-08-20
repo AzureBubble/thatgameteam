@@ -13,7 +13,7 @@ public class Story : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(KeyCode.S))
         {
             Time.timeScale = 1;
             this.gameObject.transform.parent.gameObject.SetActive(false);          
