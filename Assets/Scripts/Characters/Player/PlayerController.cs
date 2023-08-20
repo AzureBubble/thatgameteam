@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (input.isMove)
         {
-            transform.localScale = new Vector3(input.axisX, 1, 1);
+            transform.localScale = new Vector3(-input.axisX, 1, 1);
         }
         SetVolictyX(speed * input.axisX);
     }

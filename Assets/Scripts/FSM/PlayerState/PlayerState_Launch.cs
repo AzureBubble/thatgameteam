@@ -7,14 +7,14 @@ public class PlayerState_Launch : PlayerState
     {
         base.OnEnter();
         player.SetVolictyX(0f);
-
-        player.launch.LaunchObj(player.gameObject.transform.localScale.x);
     }
 
     public override void LogicUpdate()
     {
         if (isAnimationFinished)
         {
+            player.launch.LaunchObj(-player.gameObject.transform.localScale.x);
+
             if (input.isMove)
             {
                 fsm.SwitchState(typeof(PlayerState_Run));
