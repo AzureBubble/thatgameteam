@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,8 +14,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private VoidEventCenter RestartGameEventCenter;
     [SerializeField] private VoidEventCenter GoBackToMenuEventCenter;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToNextSceneEventCenter;
-
-
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToFirstSceneEventCenter;
 
     [SerializeField] private float fadeDuration = 1.5f;
     [SerializeField] private GameObject sobarBar;
@@ -29,6 +27,7 @@ public class SceneLoader : MonoBehaviour
     private Vector3 currentPos;
     private bool isFade;
     public AudioClip bgm;
+    public AudioClip transitionSFX;
 
     private void Awake()
     {
@@ -46,12 +45,12 @@ public class SceneLoader : MonoBehaviour
         //VictoryEventCenter.AddListener(OnVictoryEvent);
         GoBackToMenuEventCenter.AddListener(GoBackToMenu);
         MoveToNextSceneEventCenter.AddListener(OnMoveToNextSceneEvent);
-
+        MoveToFirstSceneEventCenter.AddListener(OnMoveToNextSceneEvent);
     }
 
     private IEnumerator Start()
     {
-        yield return LoadSceneSetActive(startSceneName,null);
+        yield return LoadSceneSetActive(startSceneName, null);
         SoundManager.audioSource.PlayOneShot(bgm);
         if (startSceneName != "Menu")
             AfterSceneLoadedEventCenter.RaiseEvent();
@@ -68,11 +67,14 @@ public class SceneLoader : MonoBehaviour
         RestartGameEventCenter.RemoveListener(Restart);
         GoBackToMenuEventCenter.RemoveListener(GoBackToMenu);
         MoveToNextSceneEventCenter.RemoveListener(OnMoveToNextSceneEvent);
+        MoveToFirstSceneEventCenter.RemoveListener(OnMoveToNextSceneEvent);
 
         //VictoryEventCenter.RemoveListener(OnVictoryEvent);
-
-
     }
+
+    //private void OnMoveToFirstSceneEvent(string sceneName, Vector3 targetPos)
+    //{
+    //}
 
     private void OnMoveToNextSceneEvent(string sceneName, Vector3 targetPos)
     {
@@ -82,6 +84,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnBeforeSceneUnLoadEvent()
     {
+        //SoundManager.audioSource.PlayOneShot(transitionSFX);
         SetSobarInVisiable();
         SoundManager.audioSource.Stop();
     }
@@ -111,12 +114,12 @@ public class SceneLoader : MonoBehaviour
     {
         //print("!111");
         if (!isFade)
-            StartCoroutine(SwitchScene(firstSceneName, firstPos,null));
+            StartCoroutine(SwitchScene(firstSceneName, firstPos, null));
     }
 
-    private IEnumerator LoadSceneSetActive(string sceneName,string currentName)
+    private IEnumerator LoadSceneSetActive(string sceneName, string currentName)
     {
-        if (currentName!=null)
+        if (currentName != null)
         {
             yield return SceneManager.UnloadSceneAsync(currentName);
         }
@@ -125,7 +128,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.SetActiveScene(newScene);
     }
 
-    private IEnumerator SwitchScene(string scenaName, Vector3 targetPos,string currentName)
+    private IEnumerator SwitchScene(string scenaName, Vector3 targetPos, string currentName)
     {
         if (currentName != null)
         {
@@ -137,11 +140,10 @@ public class SceneLoader : MonoBehaviour
 
         yield return Fade(1);
 
-        if(currentName == null)
+        if (currentName == null)
         {
             yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         }
-        
 
         yield return LoadSceneSetActive(scenaName, null);
 
@@ -172,7 +174,7 @@ public class SceneLoader : MonoBehaviour
     public void Restart()
     {
         string currentName = SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name;
-        StartCoroutine(SwitchScene(currentName,currentPos,currentName));
+        StartCoroutine(SwitchScene(currentName, currentPos, currentName));
     }
 
     public void GoBackToMenu()

@@ -15,7 +15,10 @@ public class SobarBar : MonoBehaviour
     [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> SceneNamePosEventCenter;
     [SerializeField] private VoidEventCenter CameraBlackEventCenter;
+    [SerializeField] private VoidEventCenter CallHideSobarUIEventCenter;
 
+
+    public GameObject sobarUI;
     public Image sobarImage;
     public GameObject successPanel;
     public GameObject DefeatPanel;
@@ -34,6 +37,7 @@ public class SobarBar : MonoBehaviour
         GoBackToMenuEventCenter.AddListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.AddListener(OnStringVector3Event);
         CameraBlackEventCenter.AddListener(OnCameraBlackEvent);
+        CallHideSobarUIEventCenter.AddListener(OnCallHideSobarUIEvent);
     }
 
     private void OnDisable()
@@ -46,6 +50,13 @@ public class SobarBar : MonoBehaviour
         GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.RemoveListener(OnStringVector3Event);
         CameraBlackEventCenter.RemoveListener(OnCameraBlackEvent);
+        CallHideSobarUIEventCenter.RemoveListener(OnCallHideSobarUIEvent);
+
+    }
+
+    private void OnCallHideSobarUIEvent()
+    {
+        sobarUI.SetActive(false);
     }
 
     private void OnCameraBlackEvent()

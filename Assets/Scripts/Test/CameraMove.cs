@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour
-{ 
+{
+    public string sceneName;
+    public Vector3 targetPos;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToFirstSceneEventCenter;
+    [SerializeField] private VoidEventCenter CallHideSobarUIEventCenter;
 
     public Camera cm;
 
@@ -21,20 +25,22 @@ public class CameraMove : MonoBehaviour
 
     public AudioClip[] audioClips;
 
+   
+
     private void Start()
     {
         m_FieldOfView_1 = 70;
         m_FieldOfView_2 = 43;
-
     }
-
 
     private void Update()
     {
+        CallHideSobarUIEventCenter.RaiseEvent();
+
         //this.GetComponent<AudioSource>().clip = audioClips[count];
         cm.transform.localPosition = Vector3.Lerp(cm.transform.localPosition, point[count].localPosition, speed * Time.deltaTime);
 
-        if (count<point.Length-2)
+        if (count < point.Length - 1)
         {
             if (Input.GetMouseButtonDown(0) && (Vector2.Distance(cm.transform.position, point[count].transform.localPosition) < 0.5f))
             {
@@ -50,10 +56,9 @@ public class CameraMove : MonoBehaviour
 
             if (count == 4)
             {
-
                 if (Camera.main.fieldOfView < m_FieldOfView_1)
                 {
-                    Camera.main.fieldOfView += (Time.deltaTime * scalespeed*1.5f);
+                    Camera.main.fieldOfView += (Time.deltaTime * scalespeed * 1.5f);
                 }
                 //this.GetComponent<AudioSource>().clip = audioClips[1];
                 //this.GetComponent<AudioSource>().Play();
@@ -66,16 +71,25 @@ public class CameraMove : MonoBehaviour
                     Camera.main.fieldOfView -= (Time.deltaTime * scalespeed);
                 }
             }
-
-            
         }
 
-       
-
+        if (count == 6 && Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(Transition(sceneName, targetPos));
+        }
     }
 
+ 
 
-    
+    private void OnMoveToFirstSceneEvent(string sceneName, Vector3 targetPos)
+    {
+        MoveToFirstSceneEventCenter.RaisedEvent(sceneName, targetPos);
+    }
 
+    IEnumerator Transition(string sceneName, Vector3 targetPos)
+    {
+        yield return new WaitForSeconds(2f);
+        OnMoveToFirstSceneEvent(sceneName, targetPos);
+    }
 
 }

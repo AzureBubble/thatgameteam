@@ -267,6 +267,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8946998458961061930, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
+      propertyPath: targetPos.x
+      value: -5.528
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946998458961061930, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
+      propertyPath: targetPos.y
+      value: -8.278
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946998458961061930, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
+      propertyPath: targetSceneName
+      value: Test002
+      objectReference: {fileID: 0}
     - target: {fileID: 9091580641981997399, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
       propertyPath: m_Name
       value: TeleportToScene
@@ -5296,6 +5308,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1695275115138360029, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 596957647}
+    - target: {fileID: 1695275115138360029, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 596957647}
+    - target: {fileID: 2687444803659932883, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 596957647}
+    - target: {fileID: 2687444803659932883, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 596957647}
     - target: {fileID: 4661883392503303490, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
       propertyPath: m_RootOrder
       value: 23
