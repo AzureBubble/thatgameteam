@@ -187,7 +187,7 @@ MonoBehaviour:
   successPanel: {fileID: 788371670}
   DefeatPanel: {fileID: 1524138502}
   blackPanel: {fileID: 284859170}
-  blackDuration: 0.5
+  blackDuration: 1
   victorySource: {fileID: 8300000, guid: 88a88862a0c1ccc42b871388f782fd8c, type: 3}
   defeatSource: {fileID: 8300000, guid: 6e9322cffbf06504089ce9b5538ec5d4, type: 3}
 --- !u!1 &284859170
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9528302, g: 0.49139664, b: 0.49139664, a: 0.2627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

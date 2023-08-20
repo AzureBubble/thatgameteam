@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool isInvincible { get; set; } = false;
     public bool canAttack { get; set; } = false;
     public bool isDead { get; set; } = false;
+    public bool victory { get; set; } = false;
 
     private void Awake()
     {
@@ -87,18 +88,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnVictoryEvent()
     {
+        victory = true;
         input.DisableGameplayInput();
         sobar = false;
     }
 
     private void OnStringVector3Event(string arg1, Vector3 vector)
     {
+        victory = true;
         input.DisableGameplayInput();
         sobar = false;
     }
 
     private void OnBeforeSceneUnLoadEvent()
     {
+        victory = false;
         //print("≥°æ∞–∂‘ÿ÷Æ«∞");
 
         input.DisableGameplayInput();

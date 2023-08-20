@@ -16,7 +16,6 @@ public class SobarBar : MonoBehaviour
     [SerializeField] private TwoParameterEventCenter<string, Vector3> SceneNamePosEventCenter;
     [SerializeField] private VoidEventCenter CameraBlackEventCenter;
 
-
     public Image sobarImage;
     public GameObject successPanel;
     public GameObject DefeatPanel;
@@ -24,7 +23,6 @@ public class SobarBar : MonoBehaviour
     public float blackDuration = 1.0f;
     public AudioClip victorySource;
     public AudioClip defeatSource;
-
 
     private void OnEnable()
     {
@@ -48,17 +46,14 @@ public class SobarBar : MonoBehaviour
         GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.RemoveListener(OnStringVector3Event);
         CameraBlackEventCenter.RemoveListener(OnCameraBlackEvent);
-
-
     }
 
     private void OnCameraBlackEvent()
     {
         StartCoroutine(SetBlackPanel());
-        
     }
 
-    IEnumerator SetBlackPanel()
+    private IEnumerator SetBlackPanel()
     {
         blackPanel.SetActive(true);
         yield return new WaitForSeconds(blackDuration);
