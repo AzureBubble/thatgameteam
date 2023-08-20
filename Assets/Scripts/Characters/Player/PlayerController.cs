@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GroundCheck groundCheck;
 
+    public Launch launch => GetComponentInChildren<Launch>();
     public AudioSource voicePlayer { get; private set; }
     public bool isGround => groundCheck.isGround;
     public bool doubleJump { get; set; } = false;
     public bool isFalling => rb.velocity.y < 0 && isGround;
     public bool isSobar { get; set; } = false;
     public bool isInvincible { get; set; } = false;
+    public bool canAttack { get; set; } = false;
 
     private void Awake()
     {
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // TODO:²âÊÔÓÃ£¬×¢ÒâÐÞ¸Ä
-        if (sobar && currentSobarValue >= 0)
+        if (sobar && currentSobarValue >= 0 && !isInvincible)
         {
             currentSobarValue = Mathf.MoveTowards(currentSobarValue, 0, decreaseSobarSpeed * Time.deltaTime);
             SobarChangeEventCenter.RaisedEvent(currentSobarValue, maxSobarValue);

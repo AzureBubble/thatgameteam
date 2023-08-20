@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     public bool isMove => axisX != 0;
     public bool isJump => inputActions.Gameplay.Jump.WasPressedThisFrame();
     public bool stopJump => inputActions.Gameplay.Jump.WasReleasedThisFrame();
+    public bool isAttack =>inputActions.Gameplay.Attack.WasPressedThisFrame();
+
     public bool hasJumpInputBuffer { get; set; }
 
     private void Awake()

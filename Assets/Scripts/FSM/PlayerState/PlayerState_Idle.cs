@@ -20,6 +20,11 @@ public class PlayerState_Idle : PlayerState
         {
             fsm.SwitchState(typeof(PlayerState_Jump));
         }
+
+        if (input.isAttack && player.canAttack)
+        {
+            fsm.SwitchState(typeof(PlayerState_Launch));
+        }
     }
 
     public override void PhysicsUpdate()

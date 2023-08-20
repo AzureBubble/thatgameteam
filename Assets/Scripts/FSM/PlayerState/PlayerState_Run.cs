@@ -33,6 +33,10 @@ public class PlayerState_Run : PlayerState
         {
             fsm.SwitchState(typeof(PlayerState_CoyoteTime));
         }
+        if (input.isAttack && player.canAttack)
+        {
+            fsm.SwitchState(typeof(PlayerState_Launch));
+        }
     }
 
     public override void PhysicsUpdate()
