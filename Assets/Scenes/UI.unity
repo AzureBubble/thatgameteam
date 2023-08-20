@@ -1338,6 +1338,7 @@ MonoBehaviour:
   startSceneName: Menu
   firstSceneName: Test001
   firstPos: {x: 0.58, y: -9.289, z: 0}
+  bgm: {fileID: 8300000, guid: b778494ad7d60e446ae0e6dd739eedc8, type: 3}
 --- !u!4 &1373773573
 Transform:
   m_ObjectHideFlags: 0
