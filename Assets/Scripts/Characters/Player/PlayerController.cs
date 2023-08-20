@@ -112,6 +112,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetGravity(float value)
     {
-        rb.gravityScale = value;
+        rb.gravityScale = 2.5f;
     }
 }
