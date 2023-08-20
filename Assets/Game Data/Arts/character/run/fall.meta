@@ -1,10 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Scenes/Test_yc.unity.meta
 guid: 31cabfd35f71a494987b9633d5841a56
 =======
 guid: 3f8b9155cdda95240a1a319460dce451
 folderAsset: yes
 >>>>>>> ce77b2c77161921478cbd8934ada6a07ef7932db:Assets/Game Data/Arts/character/run/fall.meta
+=======
+guid: 3f8b9155cdda95240a1a319460dce451
+folderAsset: yes
+>>>>>>> 6a10830739e9844e18a2dca130a19449fe0bd7a5
 DefaultImporter:
   externalObjects: {}
   userData: 
