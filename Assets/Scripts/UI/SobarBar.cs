@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +14,14 @@ public class SobarBar : MonoBehaviour
     [SerializeField] private VoidEventCenter GoBackToMenuEventCenter;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> SceneNamePosEventCenter;
+    [SerializeField] private VoidEventCenter CameraBlackEventCenter;
+
 
     public Image sobarImage;
     public GameObject successPanel;
     public GameObject DefeatPanel;
+    public GameObject blackPanel;
+    public float blackDuration = 1.0f;
 
     private void OnEnable()
     {
@@ -27,6 +32,7 @@ public class SobarBar : MonoBehaviour
         BeforeSceneUnLoadEvent.AddListener(OnBeforeSceneUnLoadEvent);
         GoBackToMenuEventCenter.AddListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.AddListener(OnStringVector3Event);
+        CameraBlackEventCenter.AddListener(OnCameraBlackEvent);
     }
 
     private void OnDisable()
@@ -38,10 +44,23 @@ public class SobarBar : MonoBehaviour
         BeforeSceneUnLoadEvent.RemoveListener(OnBeforeSceneUnLoadEvent);
         GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.RemoveListener(OnStringVector3Event);
+        CameraBlackEventCenter.RemoveListener(OnCameraBlackEvent);
+
 
     }
 
-    
+    private void OnCameraBlackEvent()
+    {
+        StartCoroutine(SetBlackPanel());
+        
+    }
+
+    IEnumerator SetBlackPanel()
+    {
+        blackPanel.SetActive(true);
+        yield return new WaitForSeconds(blackDuration);
+        blackPanel.SetActive(false);
+    }
 
     private void OnStringVector3Event(string sceneName, Vector3 targetPos)
     {
