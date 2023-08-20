@@ -40,7 +40,7 @@ public class Cammove : MonoBehaviour
     }
     void move()
     {
-        if (((Vector2)player.transform.position - (Vector2)transform.position).magnitude > 3f)
+        if (((Vector2)player.transform.position - (Vector2)transform.position).magnitude > 2f)
         {
             movestate = 1;
         }
