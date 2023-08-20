@@ -5,6 +5,8 @@ public class Item : MonoBehaviour
 {
     private Rigidbody2D rb;
     public int state;
+    public Vector2 pdir;
+    GameObject player;
     [SerializeField] private float throwForce;
     [SerializeField] private float awakeTime = 1.0f;
 
@@ -15,10 +17,11 @@ public class Item : MonoBehaviour
 
     public void Init(Vector2 dir)
     {
+        player = GameObject.Find("Player");
         state = 1;
-        rb.gravityScale = 1;
-        Vector2 pdir = ((Vector2)Input.mousePosition - (Vector2)transform.position).normalized;
+        pdir = ((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)player.transform.position).normalized;
         rb.AddForce(pdir * throwForce, ForceMode2D.Impulse);
+        rb.gravityScale = 1;
         StartCoroutine(DestoryObj());
     }
 
