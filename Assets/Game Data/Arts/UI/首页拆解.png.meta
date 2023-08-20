@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_1"
+      name: "\u8BBE\u7F6Es"
       rect:
         serializedVersion: 2
         x: 179
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_4"
+      name: "\u91CD\u65B0\u5F00\u59CB"
       rect:
         serializedVersion: 2
         x: 642
@@ -228,12 +228,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_5"
+      name: zzzz
       rect:
         serializedVersion: 2
         x: 68
         y: 2801
-        width: 94
+        width: 90
         height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_6"
+      name: white
       rect:
         serializedVersion: 2
         x: 162
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_13"
+      name: color
       rect:
         serializedVersion: 2
         x: 171
@@ -648,7 +648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_55"
+      name: next
       rect:
         serializedVersion: 2
         x: 2074
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_62"
+      name: "\u6210\u529F"
       rect:
         serializedVersion: 2
         x: 219
@@ -690,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u9996\u9875\u62C6\u89E3_66"
+      name: "\u5931\u8D25"
       rect:
         serializedVersion: 2
         x: 1601
@@ -761,7 +761,7 @@ TextureImporter:
         width: 110
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -782,7 +782,7 @@ TextureImporter:
         width: 116
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -803,7 +803,7 @@ TextureImporter:
         width: 115
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -826,16 +826,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      color: -782850610
+      next: 275285339
+      white: 1051511757
+      zzzz: -1876883707
       "\u4EBA\u5458": -378167877
       "\u5173\u5361": 1756637665
+      "\u5931\u8D25": 1128333397
       "\u5F00\u59CB\u6E38\u620F": 1911147692
+      "\u6210\u529F": -1094753118
       "\u8BBE\u7F6E": -957062853
+      "\u8BBE\u7F6Es": -1357806396
+      "\u91CD\u65B0\u5F00\u59CB": 318619792
       "\u9996\u9875\u62C6\u89E3_0": -1133135841
-      "\u9996\u9875\u62C6\u89E3_1": -1357806396
       "\u9996\u9875\u62C6\u89E3_10": -1893303527
       "\u9996\u9875\u62C6\u89E3_11": -2116867175
       "\u9996\u9875\u62C6\u89E3_12": 1435662326
-      "\u9996\u9875\u62C6\u89E3_13": -782850610
       "\u9996\u9875\u62C6\u89E3_14": -1614383252
       "\u9996\u9875\u62C6\u89E3_15": 1432405369
       "\u9996\u9875\u62C6\u89E3_16": -735768607
@@ -864,7 +870,6 @@ TextureImporter:
       "\u9996\u9875\u62C6\u89E3_37": 546894739
       "\u9996\u9875\u62C6\u89E3_38": 786386908
       "\u9996\u9875\u62C6\u89E3_39": 1860606519
-      "\u9996\u9875\u62C6\u89E3_4": 318619792
       "\u9996\u9875\u62C6\u89E3_40": -732980403
       "\u9996\u9875\u62C6\u89E3_41": -1139812038
       "\u9996\u9875\u62C6\u89E3_42": 1384002514
@@ -875,25 +880,20 @@ TextureImporter:
       "\u9996\u9875\u62C6\u89E3_47": 181441565
       "\u9996\u9875\u62C6\u89E3_48": 1796428450
       "\u9996\u9875\u62C6\u89E3_49": 987694466
-      "\u9996\u9875\u62C6\u89E3_5": -1876883707
       "\u9996\u9875\u62C6\u89E3_50": -297859334
       "\u9996\u9875\u62C6\u89E3_51": -291527853
       "\u9996\u9875\u62C6\u89E3_52": -2042719035
       "\u9996\u9875\u62C6\u89E3_53": -1742853013
       "\u9996\u9875\u62C6\u89E3_54": 1526388767
-      "\u9996\u9875\u62C6\u89E3_55": 275285339
       "\u9996\u9875\u62C6\u89E3_56": -158663956
       "\u9996\u9875\u62C6\u89E3_57": -1667589055
       "\u9996\u9875\u62C6\u89E3_58": 1598537973
       "\u9996\u9875\u62C6\u89E3_59": 1483438285
-      "\u9996\u9875\u62C6\u89E3_6": 1051511757
       "\u9996\u9875\u62C6\u89E3_60": 175250878
       "\u9996\u9875\u62C6\u89E3_61": 1461206430
-      "\u9996\u9875\u62C6\u89E3_62": -1094753118
       "\u9996\u9875\u62C6\u89E3_63": 670777717
       "\u9996\u9875\u62C6\u89E3_64": -748858960
       "\u9996\u9875\u62C6\u89E3_65": 114141641
-      "\u9996\u9875\u62C6\u89E3_66": 1128333397
       "\u9996\u9875\u62C6\u89E3_67": 364149634
       "\u9996\u9875\u62C6\u89E3_68": -1867559440
       "\u9996\u9875\u62C6\u89E3_69": -1685123591

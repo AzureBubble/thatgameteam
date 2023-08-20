@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,9 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private VoidEventCenter AfterSceneLoadedEventCenter;
     [SerializeField] private VoidEventCenter NewGameEventCenter;
     [SerializeField] private VoidEventCenter QuitGameEventCenter;
-    [SerializeField] private VoidEventCenter InitiazationEventCenter;
+    [SerializeField] private VoidEventCenter RestartGameEventCenter;
+    [SerializeField] private VoidEventCenter GoBackToMenuEventCenter;
+
 
     [SerializeField] private float fadeDuration = 1.5f;
     [SerializeField] private GameObject sobarBar;
@@ -21,6 +24,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private string startSceneName = "Menu";
     [SerializeField] private string firstSceneName = "Test_qzj";
     [SerializeField] private Vector3 firstPos;
+    private Vector3 currentPos;
     private bool isFade;
 
     private void Awake()
@@ -35,12 +39,14 @@ public class SceneLoader : MonoBehaviour
         StringVector3EventCenter.AddListener(OnTransitionEvent);
         NewGameEventCenter.AddListener(NewGame);
         QuitGameEventCenter.AddListener(QuitGame);
-        //InitiazationEventCenter.AddListener(OnInitiazationEvent);
+        RestartGameEventCenter.AddListener(Restart);
+        //VictoryEventCenter.AddListener(OnVictoryEvent);
+        GoBackToMenuEventCenter.AddListener(GoBackToMenu);
     }
 
     private IEnumerator Start()
     {
-        yield return LoadSceneSetActive(startSceneName);
+        yield return LoadSceneSetActive(startSceneName,null);
 
         if (startSceneName != "Menu")
             AfterSceneLoadedEventCenter.RaiseEvent();
@@ -54,7 +60,12 @@ public class SceneLoader : MonoBehaviour
         StringVector3EventCenter.RemoveListener(OnTransitionEvent);
         NewGameEventCenter.RemoveListener(NewGame);
         QuitGameEventCenter.RemoveListener(QuitGame);
-        //InitiazationEventCenter.RemoveListener(OnInitiazationEvent);
+        RestartGameEventCenter.RemoveListener(Restart);
+        GoBackToMenuEventCenter.RemoveListener(GoBackToMenu);
+
+        //VictoryEventCenter.RemoveListener(OnVictoryEvent);
+
+
     }
 
     private void OnBeforeSceneUnLoadEvent()
@@ -80,31 +91,46 @@ public class SceneLoader : MonoBehaviour
     private void OnTransitionEvent(string sceneName, Vector3 targetPos)
     {
         if (!isFade)
-            StartCoroutine(SwitchScene(sceneName, targetPos));
+            StartCoroutine(SwitchScene(sceneName, targetPos,null));
     }
 
     private void NewGame()
     {
+        //print("!111");
         if (!isFade)
-            StartCoroutine(SwitchScene(firstSceneName, firstPos));
+            StartCoroutine(SwitchScene(firstSceneName, firstPos,null));
     }
 
-    private IEnumerator LoadSceneSetActive(string sceneName)
+    private IEnumerator LoadSceneSetActive(string sceneName,string currentName)
     {
+        if (currentName!=null)
+        {
+            yield return SceneManager.UnloadSceneAsync(currentName);
+        }
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
     }
 
-    private IEnumerator SwitchScene(string scenaName, Vector3 targetPos)
+    private IEnumerator SwitchScene(string scenaName, Vector3 targetPos,string currentName)
     {
+        if (currentName != null)
+        {
+            yield return SceneManager.UnloadSceneAsync(currentName);
+        }
+        currentPos = targetPos;
+
         BeforeSceneUnLoadEventCenter.RaiseEvent();
 
         yield return Fade(1);
 
-        yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        if(currentName == null)
+        {
+            yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        }
+        
 
-        yield return LoadSceneSetActive(scenaName);
+        yield return LoadSceneSetActive(scenaName, null);
 
         MoveToPositionEventCenter.RaisedEvent(targetPos);
 
@@ -128,6 +154,18 @@ public class SceneLoader : MonoBehaviour
 
         fadeCanvasGroup.blocksRaycasts = false;
         isFade = false;
+    }
+
+    public void Restart()
+    {
+        string currentName = SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name;
+        StartCoroutine(SwitchScene(currentName,currentPos,currentName));
+    }
+
+    public void GoBackToMenu()
+    {
+        string currentName = SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name;
+        StartCoroutine(SwitchScene("Menu", currentPos, currentName));
     }
 
     private void QuitGame()
