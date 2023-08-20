@@ -15,4 +15,4 @@ MonoBehaviour:
   stateName: DoubleJump
   transitionDuration: 0.1
   moveSpeed: 3
-  jumpForce: 8
+  jumpForce: 5
