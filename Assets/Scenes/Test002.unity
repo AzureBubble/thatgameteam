@@ -6008,6 +6008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: State-Driven Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8720409532986970810, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
       propertyPath: m_Follow
       value: 
