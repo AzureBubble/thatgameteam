@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TwoParameterEventCenter<float, float> SobarChangeEventCenter;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> StringVector3EventCenter;
 
-
     [Header("«Â–—∂»…Ë÷√")]
     [SerializeField] private float maxSobarValue = 100f;
 
