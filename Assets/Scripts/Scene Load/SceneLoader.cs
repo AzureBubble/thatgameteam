@@ -14,6 +14,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private VoidEventCenter QuitGameEventCenter;
     [SerializeField] private VoidEventCenter RestartGameEventCenter;
     [SerializeField] private VoidEventCenter GoBackToMenuEventCenter;
+    [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToNextSceneEventCenter;
+
 
 
     [SerializeField] private float fadeDuration = 1.5f;
@@ -36,12 +38,14 @@ public class SceneLoader : MonoBehaviour
     {
         BeforeSceneUnLoadEventCenter.AddListener(OnBeforeSceneUnLoadEvent);
         AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
-        StringVector3EventCenter.AddListener(OnTransitionEvent);
+        //StringVector3EventCenter.AddListener(OnTransitionEvent);
         NewGameEventCenter.AddListener(NewGame);
         QuitGameEventCenter.AddListener(QuitGame);
         RestartGameEventCenter.AddListener(Restart);
         //VictoryEventCenter.AddListener(OnVictoryEvent);
         GoBackToMenuEventCenter.AddListener(GoBackToMenu);
+        MoveToNextSceneEventCenter.AddListener(OnMoveToNextSceneEvent);
+
     }
 
     private IEnumerator Start()
@@ -57,15 +61,22 @@ public class SceneLoader : MonoBehaviour
         BeforeSceneUnLoadEventCenter.RemoveListener(OnBeforeSceneUnLoadEvent);
         AfterSceneLoadedEventCenter.RemoveListener(OnAfterSceneLoadedEvent);
 
-        StringVector3EventCenter.RemoveListener(OnTransitionEvent);
+        //StringVector3EventCenter.RemoveListener(OnTransitionEvent);
         NewGameEventCenter.RemoveListener(NewGame);
         QuitGameEventCenter.RemoveListener(QuitGame);
         RestartGameEventCenter.RemoveListener(Restart);
         GoBackToMenuEventCenter.RemoveListener(GoBackToMenu);
+        MoveToNextSceneEventCenter.RemoveListener(OnMoveToNextSceneEvent);
 
         //VictoryEventCenter.RemoveListener(OnVictoryEvent);
 
 
+    }
+
+    private void OnMoveToNextSceneEvent(string sceneName, Vector3 targetPos)
+    {
+        if (!isFade)
+            StartCoroutine(SwitchScene(sceneName, targetPos, null));
     }
 
     private void OnBeforeSceneUnLoadEvent()
@@ -88,11 +99,11 @@ public class SceneLoader : MonoBehaviour
         sobarBar.SetActive(true);
     }
 
-    private void OnTransitionEvent(string sceneName, Vector3 targetPos)
-    {
-        if (!isFade)
-            StartCoroutine(SwitchScene(sceneName, targetPos,null));
-    }
+    //private void OnTransitionEvent(string sceneName, Vector3 targetPos)
+    //{
+    //    if (!isFade)
+    //        StartCoroutine(SwitchScene(sceneName, targetPos,null));
+    //}
 
     private void NewGame()
     {
