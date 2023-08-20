@@ -17,7 +17,8 @@ public class Item : MonoBehaviour
     {
         state = 1;
         rb.gravityScale = 1;
-        rb.AddForce(dir * throwForce, ForceMode2D.Impulse);
+        Vector2 pdir = ((Vector2)Input.mousePosition - (Vector2)transform.position).normalized;
+        rb.AddForce(pdir * throwForce, ForceMode2D.Impulse);
         StartCoroutine(DestoryObj());
     }
 
