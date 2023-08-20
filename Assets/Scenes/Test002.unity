@@ -339,10 +339,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 3895382980338178086, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 7554667865857515450, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_Follow
       value: 
@@ -1312,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &446193769
 AudioListener:
   m_ObjectHideFlags: 0
