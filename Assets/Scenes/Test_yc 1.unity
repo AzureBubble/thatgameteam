@@ -1996,6 +1996,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2578284443656407386, guid: 7d7a702163cfaa248a2e773239399c9e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 446193770}
+    - target: {fileID: 2578284443656407386, guid: 7d7a702163cfaa248a2e773239399c9e, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578284443656407386, guid: 7d7a702163cfaa248a2e773239399c9e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4354561217842434403, guid: 7d7a702163cfaa248a2e773239399c9e, type: 3}
       propertyPath: m_Name
       value: EscMenu
