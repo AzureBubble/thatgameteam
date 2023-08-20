@@ -23,6 +23,14 @@ public class TTest : MonoBehaviour
         setTime = zhen.GetComponent<ÃëÕë>().time;
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < bluePlane.Length; i++)
+        {
+            bluePlane[i].SetActive(true);
+        }
+    }
+
     //µ¹¼ÆÊ±
     public void Timing()
     {
