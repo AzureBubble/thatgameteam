@@ -32,6 +32,11 @@ public class PlayerState_Fall : PlayerState
         {
             fsm.SwitchState(typeof(PlayerState_Launch));
         }
+
+        if(player.victory&&player.isGround)
+        {
+            fsm.SwitchState(typeof(PlayerState_Victory));
+        }
     }
 
     public override void PhysicsUpdate()

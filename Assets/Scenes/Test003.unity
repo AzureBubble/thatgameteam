@@ -236,11 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5799995
+      value: -5.5280004
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.289
+      value: -8.278
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalPosition.z
@@ -252,15 +252,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3411062862937193335, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -277,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 3895382980338178086, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895382980338178086, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7554667865857515450, guid: fc6ac7b19a3a97a49bd3943fe3035293, type: 3}
       propertyPath: m_Follow

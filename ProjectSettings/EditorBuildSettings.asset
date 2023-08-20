@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test003.unity
     guid: 7a63f116c05265a40b9d617fdaacf16b
+  - enabled: 1
+    path: Assets/Scenes/Test_lzj2.unity
+    guid: 571af9888a6f0854cb5f5082ea6d7770
   m_configObjects: {}
