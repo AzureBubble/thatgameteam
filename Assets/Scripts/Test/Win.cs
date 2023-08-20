@@ -14,7 +14,7 @@ public class Win : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //如果触碰的是玩家
-        if (collision.gameObject == player)
+        if (collision.tag == "prop")
         {   //开关为true
             key = true;
         }

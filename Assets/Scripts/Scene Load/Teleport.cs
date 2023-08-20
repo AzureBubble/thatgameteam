@@ -15,7 +15,11 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<PlayerController>(out PlayerController player))
+        //if(collision.TryGetComponent<PlayerController>(out PlayerController player))
+        //{
+          //  VictoryEventCenter.RaiseEvent();
+       //}
+        if (collision.tag=="prop")
         {
             VictoryEventCenter.RaiseEvent();
         }
