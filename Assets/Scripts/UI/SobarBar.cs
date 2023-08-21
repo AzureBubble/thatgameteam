@@ -34,7 +34,7 @@ public class SobarBar : MonoBehaviour
         VictoryEventCenter.AddListener(OnVictoryEvent);
         RestartGameEventCenter.AddListener(OnRestartGameEvent);
         BeforeSceneUnLoadEvent.AddListener(OnBeforeSceneUnLoadEvent);
-        GoBackToMenuEventCenter.AddListener(OnGoBackToMenuEvent);
+        //GoBackToMenuEventCenter.AddListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.AddListener(OnStringVector3Event);
         CameraBlackEventCenter.AddListener(OnCameraBlackEvent);
         CallHideSobarUIEventCenter.AddListener(OnCallHideSobarUIEvent);
@@ -47,7 +47,7 @@ public class SobarBar : MonoBehaviour
         VictoryEventCenter.RemoveListener(OnVictoryEvent);
         RestartGameEventCenter.RemoveListener(OnRestartGameEvent);
         BeforeSceneUnLoadEvent.RemoveListener(OnBeforeSceneUnLoadEvent);
-        GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
+        //GoBackToMenuEventCenter.RemoveListener(OnGoBackToMenuEvent);
         StringVector3EventCenter.RemoveListener(OnStringVector3Event);
         CameraBlackEventCenter.RemoveListener(OnCameraBlackEvent);
         CallHideSobarUIEventCenter.RemoveListener(OnCallHideSobarUIEvent);
@@ -80,10 +80,10 @@ public class SobarBar : MonoBehaviour
         SceneNamePosEventCenter.RaisedEvent(sceneName, targetPos);
     }
 
-    private void OnGoBackToMenuEvent()
-    {
-        throw new NotImplementedException();
-    }
+    //private void OnGoBackToMenuEvent()
+    //{
+        
+    //}
 
     private void OnBeforeSceneUnLoadEvent()
     {
