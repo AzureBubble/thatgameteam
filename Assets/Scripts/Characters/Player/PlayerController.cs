@@ -76,6 +76,14 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+        if (currentSobarValue <= 0 || currentSobarValue > 200)
+        {
+            rb.gravityScale = 0;
+        }
+        else
+        {
+            rb.gravityScale = 1;
+        }
     }
 
     private void OnDisable()
