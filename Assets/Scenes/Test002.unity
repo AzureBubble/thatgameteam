@@ -5512,11 +5512,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8946998458961061930, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
       propertyPath: targetPos.x
-      value: -8.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8946998458961061930, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
       propertyPath: targetPos.y
-      value: -0.12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9091580641981997399, guid: e49f1bb9cd3553c4b8330d3a5734999e, type: 3}
       propertyPath: m_Name
