@@ -14,7 +14,7 @@ public class EscMenu : MonoBehaviour
 
     void Start()
     {
-        am = GameObject.Find("音乐盒子").GetComponent<AudioSource>();
+        //am = GameObject.Find("音乐盒子").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EscMenu : MonoBehaviour
                 ismenu = false;
                 Time.timeScale = 0;
 
-                am.Pause();
+                //am.Pause();
                 
             }
         }
@@ -37,7 +37,7 @@ public class EscMenu : MonoBehaviour
             menu.SetActive(false);
             ismenu = true;
             Time.timeScale = 1;
-            am.Play();
+            //am.Play();
         }
     }
 
@@ -46,7 +46,7 @@ public class EscMenu : MonoBehaviour
         menu.SetActive(false);
         ismenu = true;
         Time.timeScale = 1;
-        am.Play();
+        //am.Play();
     }
 
     public void RestartGame()//重新开始游戏
