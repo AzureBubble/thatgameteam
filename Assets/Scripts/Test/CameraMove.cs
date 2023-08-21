@@ -8,7 +8,7 @@ public class CameraMove : MonoBehaviour
     public Vector3 targetPos;
     [SerializeField] private TwoParameterEventCenter<string, Vector3> MoveToFirstSceneEventCenter;
     [SerializeField] private VoidEventCenter CallHideSobarUIEventCenter;
-    public bool isTransition;
+    //public bool isTransition;
 
     public Camera cm;
 
@@ -74,8 +74,7 @@ public class CameraMove : MonoBehaviour
             }
         }
 
-        //TODO:²âÊÔ£¬ÐÞ¸Ä
-        if (count == 6 && Input.GetMouseButtonDown(0) || isTransition)
+        if (count == 6 && Input.GetMouseButtonDown(0) )
         {
             StartCoroutine(Transition(sceneName, targetPos));
         }
