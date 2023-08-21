@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 823, y: -498}
+  m_AnchoredPosition: {x: 452, y: 94}
   m_SizeDelta: {x: 277.3191, y: 57.0289}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5230581724543136963
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.6306, y: -4.686}
+  m_AnchoredPosition: {x: 1, y: 302}
   m_SizeDelta: {x: 1113.7719, y: 347.5615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3269621769383252300
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a266c10f63529429bfadb5eec4df27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waittime: 0
 --- !u!1 &6182734655941262808
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -27.8364, y: 183}
+  m_SizeDelta: {x: 1762.7661, y: 806.4134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &711266949506574067
 CanvasRenderer:
@@ -454,7 +455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ab5202c7dc8d75b4f9afe07f4af29915, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -541,7 +542,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 09cd2cff92dd87b43bdfa8b82df93543, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd8842b04dbb38d4b8edeafb883cefa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

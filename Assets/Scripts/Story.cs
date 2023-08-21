@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Story : MonoBehaviour
 {
+    public float waittime;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,12 @@ public class Story : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waittime += Time.deltaTime;
+        if (waittime >= 3)
+        {
+            Time.timeScale = 1;
+            this.gameObject.transform.parent.gameObject.SetActive(false);
+        }
         if (Input.GetKey(KeyCode.S))
         {
             Time.timeScale = 1;

@@ -24,10 +24,14 @@ public class Box : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            Time.timeScale = 0;
-            text.text = str;
-            story.SetActive(true);
-            
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0.5f;
+                text.text = str;
+                story.SetActive(true);
+
+            }
+
         }
     }
 }
