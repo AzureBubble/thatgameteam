@@ -119,10 +119,10 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator LoadSceneSetActive(string sceneName, string currentName)
     {
-        if (currentName != null)
-        {
-            yield return SceneManager.UnloadSceneAsync(currentName);
-        }
+        //if (currentName != null)
+        //{
+        //    yield return SceneManager.UnloadSceneAsync(currentName);
+        //}
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
@@ -134,7 +134,8 @@ public class SceneLoader : MonoBehaviour
         {
             yield return SceneManager.UnloadSceneAsync(currentName);
         }
-        currentPos = targetPos;
+        if(targetPos != Vector3.zero)
+            currentPos = targetPos;
 
         BeforeSceneUnLoadEventCenter.RaiseEvent();
 
@@ -180,7 +181,7 @@ public class SceneLoader : MonoBehaviour
     public void GoBackToMenu()
     {
         string currentName = SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name;
-        StartCoroutine(SwitchScene("Menu", currentPos, currentName));
+        StartCoroutine(SwitchScene("Menu", Vector3.zero, currentName));
     }
 
     private void QuitGame()
