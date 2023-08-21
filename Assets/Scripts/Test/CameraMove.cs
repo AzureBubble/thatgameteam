@@ -26,12 +26,16 @@ public class CameraMove : MonoBehaviour
 
     public AudioClip[] audioClips;
 
+    public float timer = 3.0f;
+    public float currentTime;
+
    
 
     private void Start()
     {
         m_FieldOfView_1 = 70;
         m_FieldOfView_2 = 43;
+        currentTime = Time.time;
     }
 
     private void Update()
@@ -43,11 +47,12 @@ public class CameraMove : MonoBehaviour
 
         if (count < point.Length - 1)
         {
-            if (Input.GetMouseButtonDown(0) && (Vector2.Distance(cm.transform.position, point[count].transform.localPosition) < 0.5f))
+            if ((Input.GetMouseButtonDown(0) && (Vector2.Distance(cm.transform.position, point[count].transform.localPosition) < 0.5f))||Time.time-currentTime >=timer)
             {
                 count++;
                 this.GetComponent<AudioSource>().clip = audioClips[0];
                 this.GetComponent<AudioSource>().Play();
+                currentTime = Time.time;    
             }
             //if (count ==1)
             //{
