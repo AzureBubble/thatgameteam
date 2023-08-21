@@ -38,8 +38,9 @@ public class CallVictoryUI : MonoBehaviour
 
         if (collision.tag == "prop")
         {
+            GameObject.Find("Player").GetComponent<PlayerController>().currentSobarValue = 10000;
             SoundManager.audioSource.PlayOneShot(explodeSFX);
-
+           
             StringVector3EventCenter.RaisedEvent(targetSceneName, targetPos);
         }
     }
