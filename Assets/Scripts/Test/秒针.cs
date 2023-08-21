@@ -13,6 +13,13 @@ public class 秒针 : MonoBehaviour
         isStop = true;
     }
 
+    bool isWin;
+
+    private void OnVictoryEvent()
+    {
+        isWin = true;
+    }
+
     private void Start()
     {
         angle = 180 / time;
@@ -21,7 +28,7 @@ public class 秒针 : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isStop == false)
+        if (isStop == false||isWin ==false)
         {
             transform.Rotate(Vector3.back, Time.deltaTime * angle, Space.World);
         }
