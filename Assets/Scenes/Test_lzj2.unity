@@ -542,7 +542,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 09f6f0ace43ab374bac29026d136fc1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -787,6 +787,7 @@ GameObject:
   - component: {fileID: 1030016317}
   - component: {fileID: 1030016318}
   - component: {fileID: 1030016319}
+  - component: {fileID: 1030016320}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -861,7 +862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030016312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.79, y: 11.12, z: -10}
+  m_LocalPosition: {x: 18.79, y: 11.18, z: -10}
   m_LocalScale: {x: 2.2728, y: 2.2728, z: 2.2728}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -947,6 +948,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f604617d1ab5fb64bbc279e935494d0e, type: 3}
   - {fileID: 8300000, guid: 5e10021c04784f448984197112f4e574, type: 3}
   - {fileID: 8300000, guid: cee3bce9dd9dee242a0fcf623259ed3b, type: 3}
+  timer: 3
+  currentTime: 0
 --- !u!82 &1030016318
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1088,6 +1091,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1030016320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030016312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567342c25b77f6843b265ef9dea1d556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 1030016317}
 --- !u!1 &1073783658
 GameObject:
   m_ObjectHideFlags: 0
