@@ -79,7 +79,7 @@ public class CameraMove : MonoBehaviour
             }
         }
 
-        if (count == 6 && Input.GetMouseButtonDown(0) )
+        if (count == 7 && Input.GetMouseButtonDown(0) )
         {
             StartCoroutine(Transition(sceneName, targetPos));
         }
