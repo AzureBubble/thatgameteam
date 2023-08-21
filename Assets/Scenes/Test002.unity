@@ -1083,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (2)"
       objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u7EC8\u4E8E\u7ED3\u675F\u4E86\u4E00\u5468\u7684\u5FD9\u788C\uFF0C\u73B0\u5728\u6211\u8981\u7F8E\u7F8E\u7684\u7761\u89C9\uFF01\uFF01\uFF01\u3010\u68A6\u4E2D\u6211\u53BB\u4E86\u7B2C\u5341\u4E8C\u6761\u8857\u9053\uFF0C\u4F46\u5728\u4E0B\u4E00\u6761\u8857\u9053\u8FF7\u5931\u4E86\uFF01\u3011"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1433,6 +1437,10 @@ PrefabInstance:
     - target: {fileID: 6920404273568433268, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (4)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u4EE5\u6211\u4E4B\u771F\u6C14\uFF0C\u5408\u68A6\u5883\u4E4B\u7F8E\u597D\uFF0C\u70B8\u5F39\u52A9\u6211\uFF01\uFF01\uFF01\u4F11\u606F\u65E5\uFF0C\u6211\u8981\u7761\u89C9\uFF01\uFF01\uFF01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2124,6 +2132,10 @@ PrefabInstance:
     - target: {fileID: 6920404273568433268, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (5)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u4E3A\u4EC0\u4E48\u4F11\u606F\u65E5\u8FD8\u6709\u95F9\u949F\uFF0C\u6BC1\u706D\u5427\uFF01\uFF01\uFF01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3937,6 +3949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (3)"
       objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u542C\u8BF4\u5728\u68A6\u91CC\u8FF7\u5931\u540E\u4FBF\u4F1A\u9192\u6765\u3002\u3002\u3002\u3010\u68A6\u4E2D\u6211\u53BB\u4E86\u7B2C\u5341\u4E8C\u6761\u8857\u9053\uFF0C\u4F46\u5728\u4E0B\u4E00\u6761\u8857\u9053\u8FF7\u5931\u4E86\uFF01\u3011"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4852,6 +4868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (6)"
       objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u73B0\u5728\u662F\u5468\u516D\uFF0C\u6211\u5728\u505A\u68A6\uFF01\u6211\u68A6\u5230\u4E86\u7F8E\u98DF\uFF0C\u6E38\u620F\uFF01\u8FD9\u6837\u7684\u7684\u7F8E\u68A6\u771F\u597D\uFF01\u54E6\uFF0C\u8BE5\u6B7B\u7684\u95F9\u949F\uFF0C\u7ADF\u6562\u6270\u6211\u7F8E\u68A6\uFF0C\u5927\u5A01\u5929\u9F99\uFF0C\u4E14\u8BA9\u7ED9\u6211\u53BB\u70B8\u4E86\u5B83\uFF01\uFF01\uFF01"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4970,6 +4990,10 @@ PrefabInstance:
     - target: {fileID: 6920404273568433268, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50 (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u3010\u95F9\u949F\u8868\u76D8\u4E0A\u7684\u67D0\u4E00\u4E2A\u6570\u5B57\u662F\u5173\u952E\uFF0C\u627E\u5230\u5E76\u70B8\u6BC1\u4E4B\uFF01\uFF01\uFF01\u3011"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5870,6 +5894,10 @@ PrefabInstance:
     - target: {fileID: 6920404273568433268, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
       propertyPath: m_Name
       value: "\u95EE\u53F7\u7BB1\u5B50"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584590149252059673, guid: b9f17e70a249be148a1d5ca6afc4f3a1, type: 3}
+      propertyPath: str
+      value: "\u6211\u8BA8\u538C\u5341\u4E8C\u6708\uFF0C\u56E0\u4E3A\u6211\u4E0D\u559C\u6B22\u5341\u4E8C\u6708\u7684\u4E0B\u4E00\u4E2A\u6708\u3002\u3002\u3002"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

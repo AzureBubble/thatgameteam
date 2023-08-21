@@ -26,7 +26,7 @@ public class Box : MonoBehaviour
         {
             if (Time.timeScale == 1)
             {
-                Time.timeScale = 0.5f;
+                Time.timeScale = 0.4f;
                 text.text = str;
                 story.SetActive(true);
 
