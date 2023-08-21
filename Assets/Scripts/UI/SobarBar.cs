@@ -76,6 +76,7 @@ public class SobarBar : MonoBehaviour
         SoundManager.audioSource.PlayOneShot(victorySource);
         successPanel.SetActive(true);
         DefeatPanel.SetActive(false);
+        //Time.timeScale = 0f;
         SceneNamePosEventCenter.RaisedEvent(sceneName, targetPos);
     }
 

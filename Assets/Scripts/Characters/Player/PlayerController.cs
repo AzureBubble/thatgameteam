@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        
         BeforeSceneUnLoadEventCenter.AddListener(OnBeforeSceneUnLoadEvent);
         AfterSceneLoadedEventCenter.AddListener(OnAfterSceneLoadedEvent);
         MoveToPositionEventCenter.AddListener(OnMoveToPositionEvent);
@@ -53,12 +54,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        input.EnableGameplayInput();
+        //input.EnableGameplayInput();
     }
 
     private void Update()
     {
-        // TODO:测试用，注意修改
+
         if (sobar && currentSobarValue >= 0 && !isInvincible)
         {
             currentSobarValue = Mathf.MoveTowards(currentSobarValue, 0, decreaseSobarSpeed * Time.deltaTime);
@@ -67,13 +68,8 @@ public class PlayerController : MonoBehaviour
         if (currentSobarValue <= 0)
         {
             isDead = true;
-            Time.timeScale = 1;
             PlayerDeadEventCenter.RaiseEvent();
             input.DisableGameplayInput();
-        }
-        if (currentSobarValue > 1000)
-        {
-            Time.timeScale = 1;
         }
     }
 
@@ -100,6 +96,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnStringVector3Event(string arg1, Vector3 vector)
     {
+        //rb = GetComponent<Rigidbody2D>();
+        isInvincible = true;
+        currentSobarValue = 100000;
+        //rb.bodyType = RigidbodyType2D.Static;
+        //SetGravity(0);
+
         victory = true;
         input.DisableGameplayInput();
         sobar = false;
@@ -109,13 +111,17 @@ public class PlayerController : MonoBehaviour
     {
         victory = false;
         //print("场景卸载之前");
+        isInvincible = false;
 
         input.DisableGameplayInput();
     }
 
     private void OnAfterSceneLoadedEvent()
     {
+        //SetGravity(1);
+        currentSobarValue = maxSobarValue;
         //print("场景加载完成");
+        //Time.timeScale = 1f;
 
         input.EnableGameplayInput();
         sobar = true;
@@ -152,14 +158,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetGravity(float value)
     {
-        if (currentSobarValue <= 0 || currentSobarValue > 200)
-        {
-            rb.gravityScale = 0;
-        }
-        else
-        {
-            rb.gravityScale = 1;
-        }
-        
+         rb.gravityScale = value;
     }
 }

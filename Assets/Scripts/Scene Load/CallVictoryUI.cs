@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CallVictoryUI : MonoBehaviour
 {
@@ -16,10 +14,14 @@ public class CallVictoryUI : MonoBehaviour
         BeforeSceneLoadEventCenter.AddListener(OnBeforeSceneLoadEvent);
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void OnDisable()
     {
         BeforeSceneLoadEventCenter.RemoveListener(OnBeforeSceneLoadEvent);
-
     }
 
     private void OnBeforeSceneLoadEvent()
@@ -33,7 +35,7 @@ public class CallVictoryUI : MonoBehaviour
         //{
         //  VictoryEventCenter.RaiseEvent();
         //}
-        
+
         if (collision.tag == "prop")
         {
             SoundManager.audioSource.PlayOneShot(explodeSFX);
