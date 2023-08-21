@@ -5391,12 +5391,84 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 596957647}
     - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 596957647}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
       propertyPath: m_AnimatedTarget
       value: 
       objectReference: {fileID: 1399103339}
     - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
       propertyPath: m_ChildCameras.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[0].m_Hash
+      value: 1432961145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[1].m_Hash
+      value: -827840423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[2].m_Hash
+      value: 788460410
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[3].m_Hash
+      value: 1914514016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[4].m_Hash
+      value: 815575546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[5].m_Hash
+      value: -1013268311
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[6].m_Hash
+      value: 2099838080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[7].m_Hash
+      value: 1355815490
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[0].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[1].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[2].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[3].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[4].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[5].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[6].m_ParentHash
+      value: 756556552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894538504863945967, guid: c53cfc65a4027e74b8f5fdfbfbe7c375, type: 3}
+      propertyPath: m_ParentHash.Array.data[7].m_ParentHash
+      value: 756556552
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

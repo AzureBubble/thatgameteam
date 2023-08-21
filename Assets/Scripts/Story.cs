@@ -15,7 +15,7 @@ public class Story : MonoBehaviour
     void Update()
     {
         waittime += Time.deltaTime;
-        if (waittime >= 2)
+        if (waittime >= 2.2f)
         {
             Time.timeScale = 1;
             this.gameObject.transform.parent.gameObject.SetActive(false);
