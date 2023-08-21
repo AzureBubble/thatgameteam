@@ -68,8 +68,13 @@ public class PlayerController : MonoBehaviour
         if (currentSobarValue <= 0)
         {
             isDead = true;
+            Time.timeScale = 1;
             PlayerDeadEventCenter.RaiseEvent();
             input.DisableGameplayInput();
+        }
+        if (currentSobarValue > 1000)
+        {
+            Time.timeScale = 1;
         }
     }
 
@@ -158,6 +163,14 @@ public class PlayerController : MonoBehaviour
 
     public void SetGravity(float value)
     {
-         rb.gravityScale = value;
+        if (currentSobarValue <= 0||currentSobarValue>200)
+        {
+            rb.gravityScale = 0;
+        }
+        else
+        {
+            rb.gravityScale = 1;
+        }
+         
     }
 }
