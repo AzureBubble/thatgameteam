@@ -26,7 +26,7 @@ public class Teleport : MonoBehaviour
     {
         this.targetSceneName = targetSceneName;
         this.targetPos = targetPos;
-        print(targetSceneName + targetPos);
+        //print(targetSceneName + targetPos);
     }
 
     public void OnClick()
